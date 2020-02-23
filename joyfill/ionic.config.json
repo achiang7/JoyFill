@@ -1,0 +1,7 @@
+{
+  "name": "joyfill",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

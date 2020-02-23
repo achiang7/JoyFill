@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "captstone-joyfill": {
+      "hosting": {
+        "app": [
+          "captstone-joyfill"
+        ]
+      }
+    }
+  }
+}
