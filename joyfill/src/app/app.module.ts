@@ -25,12 +25,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LoginDialogComponent } from './landing-page/login-dialog/login-dialog.component';
 import { SignUpDialogComponent } from './landing-page/sign-up-dialog/sign-up-dialog.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     OverviewLandingPageComponent,
     LoginDialogComponent,
-    SignUpDialogComponent
+    SignUpDialogComponent,
   ],
   entryComponents: [
     LoginDialogComponent,
@@ -51,7 +54,10 @@ import { SignUpDialogComponent } from './landing-page/sign-up-dialog/sign-up-dia
 
     BrowserAnimationsModule,
 
-    MatDialogModule
+    MatDialogModule,
+
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     StatusBar,
