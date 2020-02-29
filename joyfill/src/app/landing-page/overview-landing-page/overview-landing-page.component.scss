@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,300i,400,400i,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+
+// this doesn't work
+:host {
+  background-color: #201F6C;
+  display: block;
+  min-height: 100vh;
+
+  /*font-family: proxima-nova, sans-serif;*/
+  /*font-family: 'Raleway', "Helvetica Neue", sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+    background-color: #201F6C;
+    display: block;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+/*************************************************************
+
+                          TOOLBAR
+
+**************************************************************/
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding-top: 3%;
+  background-color: #201F6C;
+}
+
+.logo-image {
+  margin-left: 5%;
+  width: 225px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5%;
+}
+
+.toolbar button {
+  border-radius: 3px;
+  border: 0px;
+  padding: 13px 33px 13px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ee5367;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  background-color: #d84f61;
+  color: #ffffff;
+}
+
+#login {
+  /*margin-right: 10px;*/
+  background-color: Transparent;
+}
+
+#login:hover {
+  color: rgb(207, 207, 207);
+}
+
+button:focus {
+  outline:0;
+}
+
+
+
+/*************************************************************
+
+                          CONTENT
+
+**************************************************************/
+.content {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1%;
+  padding: 1.9% 0% 3% 5%;
+
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'proxima-nova', sans-serif; */
+  /* font-family: 'open-sans', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.description {
+  margin-left: 0%;
+  padding-top: 10%;
+  max-width: 50%;
+  color: #ffffff;
+}
+
+.sub-description {
+  font-weight: 530;
+  width: 90%;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.sub-description p{
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.sub-description div{
+  padding-bottom: 10px;
+}
+
+.sub-description div img{
+  width: 17px;
+}
+
+.slogan {
+  font-size: 3.9rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.find-your-joy-button {
+  margin-left: -5%;
+  margin-top: 0%;
+  width: 50%;
+}
+
+.find-your-joy-button:hover {
+  cursor: pointer;
+}
+
+.cover-img {
+  width: 100%;
+}
+
+.image-section {
+  margin-right: 2%;
+  margin-top: -3%;
+}
+
+
+
+/*************************************************************
+
+                          KEY-FEATURES
+
+**************************************************************/
+.key-features {
+  font-family: 'Montserrat', sans-serif;
+
+  background-color: #ffffff;
+  /* color: #292c2f; */
+  color: #201F6C;
+
+  font-weight: 600;
+  font-size: 40px;
+
+  padding-top: 3%;
+}
+
+.features {
+  padding-top: 3%;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.feature {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+
+  margin: 0% 15% 8% 15%;
+}
+.feature p {
+  padding-top: 7%;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: normal;
+}
+#feature-description-1, #feature-description-2, #feature-description-3 {
+  margin: auto 0%;
+  width: 50%;
+  white-space: nowrap;
+}
+#feature-description-2 {
+  margin-left: 10%;
+}
+#feature-description-1, #feature-description-3 {
+  margin-right: 10%;
+}
+
+#key-feature-subheader, #key-feature-header {
+  color: #201F6C;
+  padding-left: 15%;
+}
+
+#key-feature-header {
+  font-size: 46px;
+  font-weight: 600;
+}
+#key-feature-subheader {
+  line-height: 3;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+
+/*************************************************************
+
+                          FOOTER
+
+**************************************************************/
+footer {
+  font-family: 'Montserrat', sans-serif;
+
+  /* background-color: #201F6C; */
+  background-color: #292c2f;
+  color: #ffffff;
+
+  padding-top: 3%;
+  padding-bottom: 20px;
+}
+
+.team-info {
+  font-weight: 500;
+  font-size: 40px;
+  padding-bottom: 3%;
+}
+
+.team-members {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+
+  margin: 0% 15%;
+  padding-top: 2%;
+}
+
+
+#team-info-subheader, #team-info-header {
+  padding-left: 15%;
+}
+#team-info-header {
+  font-size: 46px;
+  font-weight: 600;
+}
+#team-info-subheader {
+  line-height: 3;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+
+#member-1, #member-2, #member-3, #member-4 {
+  width: fit-content;
+  margin-top: auto;
+  margin-left: 1.3%;
+  margin-right: 1.3%;
+  text-align: center;
+}
+
+.team-members img {
+  border-radius: 25px;
+  /*width: 100%; RESIZE THE IMAGE AND CHANGE THIS BACK */
+  width: 200px;
+  height: 270px;
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.team-members p {
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  padding-top: 10px;
+}

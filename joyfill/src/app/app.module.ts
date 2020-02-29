@@ -17,23 +17,41 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { OverviewLandingPageComponent } from './landing-page/overview-landing-page/overview-landing-page.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { LoginDialogComponent } from './landing-page/login-dialog/login-dialog.component';
+import { SignUpDialogComponent } from './landing-page/sign-up-dialog/sign-up-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [
+    AppComponent,
+    OverviewLandingPageComponent,
+    LoginDialogComponent,
+    SignUpDialogComponent
+  ],
+  entryComponents: [
+    LoginDialogComponent,
+    SignUpDialogComponent
+  ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase), 
+
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireMessagingModule,
     AngularFireDatabaseModule,
-    AngularFireFunctionsModule
+    AngularFireFunctionsModule,
+
+    BrowserAnimationsModule,
+
+    MatDialogModule
   ],
   providers: [
     StatusBar,
