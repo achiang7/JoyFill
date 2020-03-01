@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication';
 import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login-dialog',
@@ -28,8 +29,15 @@ export class LoginDialogComponent implements OnInit {
   constructor(
     private authService: AuthenticationService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+
+    private dialogRef: MatDialogRef<LoginDialogComponent>
   ) { }
+
+
+  closeDialog(){
+    this.dialogRef.close();
+  }
 
   ngOnInit() {
     this.validations_form = this.formBuilder.group({
@@ -47,6 +55,7 @@ export class LoginDialogComponent implements OnInit {
   tryLogin(value){
     this.authService.doLogin(value)
     .then(res => {
+      this.closeDialog();
       this.router.navigate(["/home"]);
     }, err => {
       this.errorMessage = err.message;
