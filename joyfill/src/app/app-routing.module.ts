@@ -20,14 +20,15 @@ const routes: Routes = [
     path: 'home',
     canActivate: [AuthGuard],
     loadChildren: './homepage/home/home.module#HomePageModule'
-  },  {
-    path: 'user-profile',
-    loadChildren: () => import('./profile/user-profile/user-profile.module').then( m => m.UserProfilePageModule)
   },
-  {
-    path: 'user-joymap',
-    loadChildren: () => import('./profile/user-joymap/user-joymap.module').then( m => m.UserJoymapPageModule)
-  },
+  // {
+  //   path: 'user-profile',
+  //   loadChildren: () => import('./profile/user-profile/user-profile.module').then( m => m.UserProfilePageModule)
+  // },
+  // {
+  //   path: 'user-joymap',
+  //   loadChildren: () => import('./profile/user-joymap/user-joymap.module').then( m => m.UserJoymapPageModule)
+  // },
 
   // {
   //   path: '**',
