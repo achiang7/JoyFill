@@ -5,6 +5,10 @@ import { Router } from '@angular/router';
 
 import { MustMatch } from './must-match.validator';
 
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+// tslint:disable-next-line: max-line-length
+import { PostSignupRedirectDialogComponent } from 'src/app/complete-profile/post-signup-redirect-dialog/post-signup-redirect-dialog.component';
+
 @Component({
   selector: 'app-sign-up-dialog',
   templateUrl: './sign-up-dialog.component.html',
@@ -32,6 +36,8 @@ export class SignUpDialogComponent implements OnInit {
   constructor(
     private authService: AuthenticationService,
     private formBuilder: FormBuilder,
+    private dialog: MatDialog,
+    private dialogRef: MatDialogRef<SignUpDialogComponent>,
     private router: Router
   ) { }
 
@@ -55,22 +61,35 @@ export class SignUpDialogComponent implements OnInit {
 
   get f() { return this.validations_form.controls; }
 
-
-  tryRegister(value){
+  tryRegister(value) {
     this.authService.doRegister(value)
      .then(res => {
        console.log(res);
-       this.errorMessage = "";
-       this.successMessage = "Your account has been created. Please log in.";
+       this.errorMessage = '';
+       this.successMessage = 'Your account has been successfully created.';
+       this.authService.updateUserProfile({email: value.email});
+
+       // user is authenticated (aka they're considered as logged in)
+       // this.authService.setAuthenticated(true);
+
+       // open popup to redirect to complete profile page
+       const dialogConfig = new MatDialogConfig();
+       dialogConfig.height = '90%';
+       dialogConfig.width = '40%';
+       const redirectRef = this.dialog.open(PostSignupRedirectDialogComponent, dialogConfig);
+
+       // close signup dialog
+       this.dialogRef.close();
+
      }, err => {
        console.log(err);
        this.errorMessage = err.message;
-       this.successMessage = "";
+       this.successMessage = '';
      })
   }
 
-  goLoginPage(){
-    this.router.navigate(["/login"]);
+  goLoginPage() {
+    this.router.navigate(['/login']);
   }
 
 }

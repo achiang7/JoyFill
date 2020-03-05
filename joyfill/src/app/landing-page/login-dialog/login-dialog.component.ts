@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication';
 import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login-dialog',
@@ -28,7 +29,9 @@ export class LoginDialogComponent implements OnInit {
   constructor(
     private authService: AuthenticationService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+
+    private dialogRef: MatDialogRef<LoginDialogComponent>
   ) { }
 
   ngOnInit() {
@@ -44,19 +47,24 @@ export class LoginDialogComponent implements OnInit {
     });
   }
 
-  tryLogin(value){
+  tryLogin(value) {
     this.authService.doLogin(value)
     .then(res => {
-      this.router.navigate(["/home"]);
+      this.closeDialog();
+      this.router.navigate(['/home']);
     }, err => {
       this.errorMessage = err.message;
       console.log(err)
     })
   }
 
-  // create registration page 
-  goRegisterPage(){
-    this.router.navigate(["/register"]);
+  // create registration page
+  goRegisterPage() {
+    this.router.navigate(['/register']);
+  }
+
+  closeDialog() {
+    this.dialogRef.close();
   }
 
 }

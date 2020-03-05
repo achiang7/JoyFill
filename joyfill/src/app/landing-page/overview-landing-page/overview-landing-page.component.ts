@@ -1,5 +1,5 @@
 import { Component, Inject,  OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { SignUpDialogComponent } from '../sign-up-dialog/sign-up-dialog.component';
 
@@ -18,10 +18,12 @@ export class OverviewLandingPageComponent implements OnInit {
   }
 
   openLogin(): void {
-    const loginRef = this.dialog.open(LoginDialogComponent, {
-      width: '40%',
-      height: '90%',
-    });
+    const dialogConfig = new MatDialogConfig();
+    // dialogConfig.closeOnNavigation = true; THIS DIDNT WORK FOR SOME REASON
+    dialogConfig.height = '90%';
+    dialogConfig.width = '40%';
+
+    const loginRef = this.dialog.open(LoginDialogComponent, dialogConfig);
   }
 
   openSignUp() {

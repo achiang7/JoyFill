@@ -7,7 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -24,9 +24,10 @@ import { OverviewLandingPageComponent } from './landing-page/overview-landing-pa
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginDialogComponent } from './landing-page/login-dialog/login-dialog.component';
 import { SignUpDialogComponent } from './landing-page/sign-up-dialog/sign-up-dialog.component';
+import { PostSignupRedirectDialogComponent } from './complete-profile/post-signup-redirect-dialog/post-signup-redirect-dialog.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { CompleteProfilePageModule } from './complete-profile/complete-profile.module';
 
 @NgModule({
   declarations: [
@@ -34,15 +35,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     OverviewLandingPageComponent,
     LoginDialogComponent,
     SignUpDialogComponent,
+    PostSignupRedirectDialogComponent
   ],
   entryComponents: [
     LoginDialogComponent,
-    SignUpDialogComponent
+    SignUpDialogComponent,
+    PostSignupRedirectDialogComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule,
 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
@@ -57,7 +59,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    CompleteProfilePageModule, 
+    AppRoutingModule,
+
   ],
   providers: [
     StatusBar,
