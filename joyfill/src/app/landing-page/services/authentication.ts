@@ -1,18 +1,39 @@
-import { Injectable } from "@angular/core";
-import * as firebase from "firebase/app";
-import { AngularFireAuth } from "@angular/fire/auth";
+import { Injectable } from '@angular/core';
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class AuthenticationService {
 
-  userAuthenticated = false;
+  // userAuthenticated = false;
 
   constructor(public afAuth: AngularFireAuth) {}
 
+  // setAuthenticated(value: boolean){
+  //   this.userAuthenticated = value;
+  // }
+
   isAuthenticated() {
-    return this.userAuthenticated;
+    return new Promise<any>((resolve, reject) => {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          console.log('hi im signed in');
+          console.log(user);
+          return true;
+        }
+        return false;
+      });
+    });
+  }
+
+  updateUserProfile(value) {
+    firebase.auth().currentUser.updateProfile(value).then(() => {
+      console.log('User profile successfully updated');
+    }).catch((error) => {
+      // an error occurred
+    });
   }
 
   doRegister(value) {
@@ -34,7 +55,7 @@ export class AuthenticationService {
         .signInWithEmailAndPassword(value.email, value.password)
         .then(
           res => {
-            this.userAuthenticated = true;
+            // this.userAuthenticated = true;
             resolve(res);
           },
           err => reject(err)

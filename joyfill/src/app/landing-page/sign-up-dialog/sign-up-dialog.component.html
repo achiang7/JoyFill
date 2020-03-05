@@ -36,8 +36,8 @@
       <ion-input type="password" formControlName="confirmPassword"></ion-input>
     </ion-item>
     <div *ngIf="(validations_form.get('confirmPassword').dirty || validations_form.get('confirmPassword').touched) && f.confirmPassword.errors" class="invalid-feedback">
-      <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-      <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+      <div class="error-message" *ngIf="f.confirmPassword.errors.required">Confirm password is required</div>
+      <div class="error-message" *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
     </div>
 
     <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Register</ion-button>

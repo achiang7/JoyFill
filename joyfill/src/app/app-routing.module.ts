@@ -4,9 +4,14 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { OverviewLandingPageComponent } from './landing-page/overview-landing-page/overview-landing-page.component';
 
 import { AuthGuard } from './homepage/homepage-services/auth-guard.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'overview', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: 'overview',
+    pathMatch: 'full'
+  },
   {
     path: 'overview',
     component: OverviewLandingPageComponent
@@ -15,13 +20,19 @@ const routes: Routes = [
     path: 'home',
     canActivate: [AuthGuard],
     loadChildren: './homepage/home/home.module#HomePageModule'
+  },  {
+    path: 'user-profile',
+    loadChildren: () => import('./profile/user-profile/user-profile.module').then( m => m.UserProfilePageModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./homepage/home/home.module').then( m => m.HomePageModule)
+    path: 'user-joymap',
+    loadChildren: () => import('./profile/user-joymap/user-joymap.module').then( m => m.UserJoymapPageModule)
   },
 
-
+  // {
+  //   path: '**',
+  //   component: PageNotFoundComponent
+  // }
 ];
 
 @NgModule({
@@ -31,3 +42,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [OverviewLandingPageComponent]

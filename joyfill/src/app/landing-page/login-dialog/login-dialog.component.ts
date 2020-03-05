@@ -34,11 +34,6 @@ export class LoginDialogComponent implements OnInit {
     private dialogRef: MatDialogRef<LoginDialogComponent>
   ) { }
 
-
-  closeDialog(){
-    this.dialogRef.close();
-  }
-
   ngOnInit() {
     this.validations_form = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
@@ -52,20 +47,24 @@ export class LoginDialogComponent implements OnInit {
     });
   }
 
-  tryLogin(value){
+  tryLogin(value) {
     this.authService.doLogin(value)
     .then(res => {
       this.closeDialog();
-      this.router.navigate(["/home"]);
+      this.router.navigate(['/home']);
     }, err => {
       this.errorMessage = err.message;
       console.log(err)
     })
   }
 
-  // create registration page 
-  goRegisterPage(){
-    this.router.navigate(["/register"]);
+  // create registration page
+  goRegisterPage() {
+    this.router.navigate(['/register']);
+  }
+
+  closeDialog() {
+    this.dialogRef.close();
   }
 
 }
