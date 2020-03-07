@@ -18,12 +18,8 @@ export class AuthenticationService {
   isAuthenticated() {
     return new Promise<any>((resolve, reject) => {
       firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          console.log('hi im signed in');
-          console.log(user);
-          return true;
-        }
-        return false;
+        console.log('User:', user);
+        resolve(user);
       });
     });
   }

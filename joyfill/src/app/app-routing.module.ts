@@ -8,18 +8,22 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'overview',
-    pathMatch: 'full'
+    path: 'home',
+    canActivate: [AuthGuard],
+    loadChildren: './homepage/home/home.module#HomePageModule'
   },
   {
     path: 'overview',
     component: OverviewLandingPageComponent
   },
   {
-    path: 'home',
-    canActivate: [AuthGuard],
-    loadChildren: './homepage/home/home.module#HomePageModule'
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'complete-profile',
+    loadChildren: () => import('./complete-profile/complete-profile.module').then( m => m.CompleteProfilePageModule)
   },
   // {
   //   path: 'user-profile',

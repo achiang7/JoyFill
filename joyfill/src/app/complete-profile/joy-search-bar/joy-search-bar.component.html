@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Getting Started</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Type in your joys here..."></ion-searchbar>
+  <ion-list>
+    <ion-item button="true" *ngFor="let joy of currentJoys">
+      <ion-label>{{joy.name}}</ion-label>
+    </ion-item>
+    
+    <!-- <button ion-item (click)="openJoy(joy)" *ngFor="let joy of currentJoys">
+      <ion-avatar item-start>
+        <img [src]="joy.profilePic" />
+      </ion-avatar>
+      <h2>{{joy.name}}</h2>
+      <p>{{joy.about}}</p>
+      <ion-note item-end *ngIf="joy.note">{{joy.note}}</ion-note>
+    </button> -->
+  </ion-list>
+</ion-content>

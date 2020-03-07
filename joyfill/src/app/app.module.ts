@@ -28,6 +28,9 @@ import { PostSignupRedirectDialogComponent } from './complete-profile/post-signu
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompleteProfilePageModule } from './complete-profile/complete-profile.module';
+import { BasicUserInfoDialogComponent } from './complete-profile/basic-user-info-dialog/basic-user-info-dialog.component';
+// tslint:disable-next-line: max-line-length
+import { SelectingJoysOptionsDialogComponent } from './complete-profile/selecting-joys-options-dialog/selecting-joys-options-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,17 +38,26 @@ import { CompleteProfilePageModule } from './complete-profile/complete-profile.m
     OverviewLandingPageComponent,
     LoginDialogComponent,
     SignUpDialogComponent,
-    PostSignupRedirectDialogComponent
+
+    // complete-profile module
+    PostSignupRedirectDialogComponent,
+    BasicUserInfoDialogComponent,
+    SelectingJoysOptionsDialogComponent
   ],
   entryComponents: [
     LoginDialogComponent,
     SignUpDialogComponent,
-    PostSignupRedirectDialogComponent
+
+    // complete-profile module
+    PostSignupRedirectDialogComponent,
+    BasicUserInfoDialogComponent,
+    SelectingJoysOptionsDialogComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
 
+    // firebase
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -54,16 +66,13 @@ import { CompleteProfilePageModule } from './complete-profile/complete-profile.m
     AngularFireDatabaseModule,
     AngularFireFunctionsModule,
 
+    // other
     BrowserAnimationsModule,
-
     MatDialogModule,
-
     FormsModule,
     ReactiveFormsModule,
 
-    CompleteProfilePageModule, 
     AppRoutingModule,
-
   ],
   providers: [
     StatusBar,

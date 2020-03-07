@@ -3,14 +3,28 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CompleteProfilePage } from './complete-profile/complete-profile.page';
 import { AuthGuard } from '../homepage/homepage-services/auth-guard.service';
+import { JoySearchBarComponent } from './joy-search-bar/joy-search-bar.component';
 
 
 const routes: Routes = [
   {
-    path: 'complete-profile',
+    path: '',
     canActivate: [AuthGuard],
-    component: CompleteProfilePage
-  }
+    children: [
+      {
+        path: '',
+        // canActivateChild: [AuthGuard],
+        children: [
+          { path: 'joy-search-bar', component: JoySearchBarComponent },
+          { path: '', component: CompleteProfilePage }
+        ]
+      }
+    ]
+  },
+  // {
+  //   path: 'joy-search-bar', 
+  //   component: JoySearchBarComponent
+  // }
 ];
 
 @NgModule({

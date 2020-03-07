@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as firebase from "firebase/app";
+import * as firebase from 'firebase/app';
 
 
 @Component({
@@ -14,8 +14,8 @@ export class HomePage implements OnInit {
   ngOnInit() {
     console.log('Home module initialized');
 
-    let user = firebase.auth().currentUser;
-    console.log(user);
+    // const user = firebase.auth().currentUser;
+    // console.log(user);
   }
 
 }
