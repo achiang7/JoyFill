@@ -32,6 +32,10 @@ import { BasicUserInfoDialogComponent } from './complete-profile/basic-user-info
 // tslint:disable-next-line: max-line-length
 import { SelectingJoysOptionsDialogComponent } from './complete-profile/selecting-joys-options-dialog/selecting-joys-options-dialog.component';
 
+import { UserService } from './services/user.service';
+import { FirestoreService } from './firebase-services/firestore.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +81,9 @@ import { SelectingJoysOptionsDialogComponent } from './complete-profile/selectin
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    UserService,
+    FirestoreService
   ],
   bootstrap: [AppComponent]
 })

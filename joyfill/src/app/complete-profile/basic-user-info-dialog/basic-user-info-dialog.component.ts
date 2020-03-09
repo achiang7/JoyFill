@@ -3,6 +3,7 @@ import { MatDialogRef, MatDialog, MatDialogConfig } from '@angular/material/dial
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthenticationService } from 'src/app/landing-page/services/authentication';
 import { SelectingJoysOptionsDialogComponent } from '../selecting-joys-options-dialog/selecting-joys-options-dialog.component';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-basic-user-info-dialog',
@@ -18,6 +19,7 @@ export class BasicUserInfoDialogComponent implements OnInit {
     private dialogRef: MatDialogRef<BasicUserInfoDialogComponent>,
     private formBuilder: FormBuilder,
     private authService: AuthenticationService,
+    private userService: UserService,
   ) { }
 
   ngOnInit() {
@@ -29,9 +31,15 @@ export class BasicUserInfoDialogComponent implements OnInit {
   }
 
   onNext(value) {
+    // update firbase Auth user properties
     this.authService.updateUserProfile({
       displayName: value.firstName + ' ' + value.lastName
     });
+
+    // update currentUser property
+    this.userService.currentUser.uid = this.authService.getUid();
+    this.userService.currentUser.firstName = value.firstName;
+    this.userService.currentUser.lastName = value.lastName;
 
     // open new dialog
     const dialogConfig = new MatDialogConfig();

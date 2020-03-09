@@ -18,7 +18,6 @@ export class AuthenticationService {
   isAuthenticated() {
     return new Promise<any>((resolve, reject) => {
       firebase.auth().onAuthStateChanged((user) => {
-        console.log('User:', user);
         resolve(user);
       });
     });
@@ -30,6 +29,10 @@ export class AuthenticationService {
     }).catch((error) => {
       // an error occurred
     });
+  }
+
+  getUid() {
+    return firebase.auth().currentUser.uid;
   }
 
   doRegister(value) {

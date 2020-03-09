@@ -1,61 +1,84 @@
 import { Injectable } from '@angular/core';
 
-import { Joy } from '../model/joy';
 
 @Injectable({
     providedIn: 'root'
 })
 export class Joys {
-  joys: Joy[] = [];
+  joys: any[] = [];
 
-  defaultJoys: any = {
-    'name': 'Burt Bear',
-    'profilePic': 'assets/img/speakers/bear.jpg',
-    'about': 'Burt is a Bear.',
-  };
-
+  // defaultJoys: any = {
+  //   'name': 'Burt Bear',
+  //   'joyIcon': 'assets/img/speakers/bear.jpg',
+  //   'category': 'Burt is a Bear.',
+  // };
 
   constructor() {
     const joys = [
       {
-        'name': 'Burt Bear',
-        'profilePic': 'assets/img/speakers/bear.jpg',
-        'about': 'Burt is a Bear.'
+        name: 'Hiking',
+        joyIcon: 'assets/img/speakers/bear.jpg',
+        category: 'Sports',
+        notes: ''
       },
       {
-        'name': 'Charlie Cheetah',
-        'profilePic': 'assets/img/speakers/cheetah.jpg',
-        'about': 'Charlie is a Cheetah.'
+        name: 'Badminton',
+        joyIcon: 'assets/img/speakers/bear.jpg',
+        category: 'Sports',
+        notes: ''
       },
       {
-        'name': 'Donald Duck',
-        'profilePic': 'assets/img/speakers/duck.jpg',
-        'about': 'Donald is a Duck.'
+        name: 'Tennis',
+        joyIcon: 'assets/img/speakers/bear.jpg',
+        category: 'Sports',
+        notes: ''
       },
       {
-        'name': 'Eva Eagle',
-        'profilePic': 'assets/img/speakers/eagle.jpg',
-        'about': 'Eva is an Eagle.'
+        name: 'Go',
+        joyIcon: 'assets/img/speakers/bear.jpg',
+        category: 'Board Game',
+        notes: ''
       },
       {
-        'name': 'Ellie Elephant',
-        'profilePic': 'assets/img/speakers/elephant.jpg',
-        'about': 'Ellie is an Elephant.'
+        name: 'Fishing',
+        joyIcon: 'assets/img/speakers/bear.jpg',
+        category: 'Sports',
+        notes: ''
       },
       {
-        'name': 'Molly Mouse',
-        'profilePic': 'assets/img/speakers/mouse.jpg',
-        'about': 'Molly is a Mouse.'
+        name: 'Partying',
+        joyIcon: 'assets/img/speakers/bear.jpg',
+        category: 'Social',
+        notes: ''
       },
       {
-        'name': 'Paul Puppy',
-        'profilePic': 'assets/img/speakers/puppy.jpg',
-        'about': 'Paul is a Puppy.'
+        name: 'Valentines',
+        joyIcon: 'assets/img/speakers/bear.jpg',
+        category: 'Holiday',
+        notes: ''
+      },
+      {
+        name: 'Sleeping',
+        joyIcon: 'assets/img/speakers/bear.jpg',
+        category: 'Well-Being',
+        notes: ''
+      },
+      {
+        name: 'Meditating',
+        joyIcon: 'assets/img/speakers/bear.jpg',
+        category: 'Well-Being',
+        notes: ''
+      },
+      {
+        name: 'Surfing',
+        joyIcon: 'assets/img/speakers/bear.jpg',
+        category: 'Sports',
+        notes: ''
       }
     ];
 
     for (const joy of joys) {
-      this.joys.push(new Joy(joy));
+      this.joys.push(joy);
     }
   }
 
@@ -80,11 +103,11 @@ export class Joys {
     });
   }
 
-  add(joy: Joy) {
+  add(joy) {
     this.joys.push(joy);
   }
 
-  delete(joy: Joy) {
+  delete(joy) {
     this.joys.splice(this.joys.indexOf(joy), 1);
   }
 }

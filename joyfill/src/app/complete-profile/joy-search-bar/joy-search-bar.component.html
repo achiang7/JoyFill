@@ -1,3 +1,5 @@
+
+
 <ion-header>
   <ion-toolbar>
     <ion-title>Getting Started</ion-title>
@@ -8,7 +10,7 @@
 <ion-content>
   <ion-searchbar (ionInput)="getItems($event)" placeholder="Type in your joys here..."></ion-searchbar>
   <ion-list>
-    <ion-item button="true" *ngFor="let joy of currentJoys">
+    <ion-item button="true" (click)="selectJoy(joy)" *ngFor="let joy of currentJoys">
       <ion-label>{{joy.name}}</ion-label>
     </ion-item>
     
@@ -21,4 +23,17 @@
       <ion-note item-end *ngIf="joy.note">{{joy.note}}</ion-note>
     </button> -->
   </ion-list>
+
+  <ion-title> Selected Joys: </ion-title>
+  <ion-card *ngFor="let joy of selectedJoys">
+    <ion-card-content>{{ joy.name }}</ion-card-content>
+  </ion-card>
+
+  <ion-row justify-content-center>  
+    <ion-col>
+      <ion-button size="small" color="secondary" (click)="submitJoys()">Proceed</ion-button>
+    </ion-col>
+    <!-- <ion-button  size="small" color="secondary">Proceed</ion-button> -->
+  </ion-row>
+
 </ion-content>
