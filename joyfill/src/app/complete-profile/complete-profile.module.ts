@@ -8,21 +8,29 @@ import { CompleteProfilePageRoutingModule } from './complete-profile-routing.mod
 
 import { CompleteProfilePage } from './complete-profile/complete-profile.page';
 import { BasicUserInfoDialogComponent } from './basic-user-info-dialog/basic-user-info-dialog.component';
+import { SelectingJoysOptionsDialogComponent } from './selecting-joys-options-dialog/selecting-joys-options-dialog.component';
+import { JoySearchBarComponent } from './joy-search-bar/joy-search-bar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
+
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    CompleteProfilePageRoutingModule
+    CompleteProfilePageRoutingModule,
   ],
   entryComponents: [
-    BasicUserInfoDialogComponent
+    // BasicUserInfoDialogComponent,
+    // SelectingJoysOptionsDialogComponent
   ],
   declarations: [
     CompleteProfilePage,
-    BasicUserInfoDialogComponent
+    // BasicUserInfoDialogComponent,
+    // SelectingJoysOptionsDialogComponent,
+    JoySearchBarComponent
   ]
 })
 export class CompleteProfilePageModule {}

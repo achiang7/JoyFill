@@ -22,6 +22,7 @@ export class CompleteProfilePage implements OnInit {
     // dialogConfig.panelClass = 'my-panel'; used for styling the dialog?
 
     const basicInfoDialogRef = this.dialog.open(BasicUserInfoDialogComponent, dialogConfig);
+    // check whether the use has already completed the set up profile flow, if not, open the popup
   }
 
 }

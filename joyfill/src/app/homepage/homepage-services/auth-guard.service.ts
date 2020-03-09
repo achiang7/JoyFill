@@ -9,13 +9,18 @@ import { AuthenticationService } from '../../landing-page/services/authenticatio
 export class AuthGuard implements CanActivate {
 
     base_url: string;
+    public authenticated;
 
     constructor(private router: Router, private authService: AuthenticationService) {}
 
-    canActivate() {
+    async canActivate() {
+        console.log('Auth guard triggered.');
+
         // Check to see if a user has a valid token
-        if (this.authService.isAuthenticated()) {
+        this.authenticated = await this.authService.isAuthenticated();
+        if (this.authenticated) {
             // If they do, return true and allow the user to load app
+            console.log('User logged in.');
             return true;
         }
 
