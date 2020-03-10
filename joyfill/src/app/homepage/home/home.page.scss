@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+$font: 'Lato', sans-serif;
+
+/* Header Styles */
+#toolbar-style{
+  --background: #201F6C;
+}
+
+#logo-style {
+  width: 150px;
+  padding-left: 20px;
+  padding-top: 5px;
+  height: auto;
+}
+
+/* Diagram Style */
+#main {
+  min-height: 100vh;
+  display: flex;
+  background-color: #252a41;
+}
+
+#container {
+  background-color: white;
+  border-radius: 15px;
+  width: 65vw;
+  margin: 15px 0 15px 15px;
+}
+
+/* Notification Style */
+#inv {
+  width: 35vw;
+  background-color: white;
+  border-radius: 15px;
+  margin: 15px 15px 15px 15px;
+}
+
+h1 {
+  text-align: center;
+}

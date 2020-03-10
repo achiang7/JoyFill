@@ -1,0 +1,25 @@
+{
+    "nodes": [
+        {"id": 1, "name": "Andrew Kim", "value": 125, "group": 1},
+        {"id": 2, "name": "Kevin Chiu", "value": 87, "group": 1},
+        {"id": 3, "name": "Anthony Chiang", "value": 100, "group": 1},
+        {"id": 4, "name": "Sean Kim", "value": 75, "group": 1},
+        {"id": 5, "name": "Erica Shimizu", "value": 86, "group": 1},
+        {"id": 6, "name": "Tin Ho", "value": 78, "group": 1},
+        {"id": 7, "name": "Solomon Kim", "value": 87, "group": 1},
+        {"id": 8, "name": "Isaac Hills", "value": 60, "group": 1},
+        {"id": 9, "name": "Andre Park", "value": 63, "group": 1},
+        {"id": 10, "name": "Justin Park", "value": 52, "group": 1}
+    ],
+    "links": [
+        {"source": 0, "target": 1, "strength": 1},
+        {"source": 0, "target": 2, "strength": 0.1},
+        {"source": 0, "target": 3, "strength": 0.2},
+        {"source": 0, "target": 4, "strength": 0.3},
+        {"source": 0, "target": 5, "strength": 0.4},
+        {"source": 0, "target": 6, "strength": 0.5},
+        {"source": 6, "target": 7, "strength": 0.6},
+        {"source": 6, "target": 8, "strength": 0.7},
+        {"source": 6, "target": 9, "strength": 0.8}
+    ]
+}
