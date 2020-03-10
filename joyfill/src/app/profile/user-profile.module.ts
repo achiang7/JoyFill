@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { UserProfilePageRoutingModule } from './user-profile-routing.module';
 
 import { UserProfilePage } from './user-profile/user-profile.page';
+import { UserJoymapPage } from './user-joymap/user-joymap.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { UserProfilePage } from './user-profile/user-profile.page';
     IonicModule,
     UserProfilePageRoutingModule
   ],
-  declarations: [UserProfilePage]
+  declarations: [
+    UserProfilePage,
+    UserJoymapPage
+  ]
 })
 export class UserProfilePageModule {}

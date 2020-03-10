@@ -17,7 +17,6 @@ export class FirestoreService {
             joys: user.joys,
         }).then(() => {
             console.log('Document successfully written!');
-        })
+        });
     }
-
 }
