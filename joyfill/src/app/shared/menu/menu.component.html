@@ -1,21 +1,27 @@
-<ion-menu side="start" menuId="custom" contentId="content" class="menu-style">
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title id="toolbar-style">
-        <img id="logo-style" src="../../../assets/logo.png" alt="Joyfill Logo">
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
-        <ion-item [routerLink]="p.url" routerDirection="root" [class.active-item]="selectedPath === p.url">
-          <img id="icon-style" [src]="p.image" alt="Icon">
-          <p>{{p.title}}</p>
-        </ion-item>
-      </ion-menu-toggle>
-    </ion-list>
-  </ion-content>
-</ion-menu>
+<ion-split-pane when="(min-width: 15vw)">
+  <ion-menu>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>
+            <img id="logo-style" src="../../../assets/logo.png" alt="Joyfill Logo">
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>    
 
-<ion-router-outlet id="content" main></ion-router-outlet>
+      <ion-content>
+          <ion-list>
+            <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+              <ion-item button [routerLink] = "p.url" [class.active-item]="selectedPath === p.url" routerDirection="root">
+                <img id="icon-style" [src]="p.image" alt="Icon">
+                <ion-label>
+                  {{ p.title }}
+                </ion-label>
+              </ion-item>    
+            </ion-menu-toggle>
+          </ion-list>
+      </ion-content>
+    
+  </ion-menu>
+
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>
