@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -22,6 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverviewLandingPageComponent } from './landing-page/overview-landing-page/overview-landing-page.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { LoginDialogComponent } from './landing-page/login-dialog/login-dialog.component';
 import { SignUpDialogComponent } from './landing-page/sign-up-dialog/sign-up-dialog.component';
 import { PostSignupRedirectDialogComponent } from './complete-profile/post-signup-redirect-dialog/post-signup-redirect-dialog.component';
@@ -74,6 +76,7 @@ import { FirestoreService } from './firebase-services/firestore.service';
     // other
     BrowserAnimationsModule,
     MatDialogModule,
+    MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule,
 
@@ -84,7 +87,13 @@ import { FirestoreService } from './firebase-services/firestore.service';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     UserService,
-    FirestoreService
+    FirestoreService, 
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (us: UserService) => () => us.init(),
+      deps: [UserService],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -56,14 +56,11 @@ export class LoginDialogComponent implements OnInit {
     .then(res => {
       this.closeDialog();
       localStorage.setItem('uid', this.authService.getUid());
-      this.firestoreService.populateLocalUser(localStorage.getItem('uid'));
-      this.router.navigate(['/profile', { uid: localStorage.getItem('uid') }]);
-
-      // this.router.navigate(['/home']);
+      this.firestoreService.populateLocalUser(localStorage.getItem('uid')); // the navigation happens in here
     }, err => {
       this.errorMessage = err.message;
-      console.log(err)
-    })
+      console.log(err);
+    });
   }
 
   // create registration page

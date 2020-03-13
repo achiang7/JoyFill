@@ -11,6 +11,9 @@
   <ion-searchbar (ionInput)="getItems($event)" placeholder="Type in your joys here..."></ion-searchbar>
   <ion-list>
     <ion-item button="true" (click)="selectJoy(joy)" *ngFor="let joy of currentJoys">
+      <ion-avatar item-start>
+        <img [src]="joy.joyIcon" />
+      </ion-avatar>
       <ion-label>{{joy.name}}</ion-label>
     </ion-item>
     

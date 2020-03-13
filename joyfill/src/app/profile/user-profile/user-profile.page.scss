@@ -24,14 +24,13 @@ ion-title {
 
 ion-col { 
     text-align: center;
-    margin: 0.75%;
     border-radius: 20px;
 }
 
 ion-item { 
     --background: #252a41;
     color: white;
-    width: 60%;
+    width: 90%;
 }
 
 .overview { 
@@ -39,11 +38,13 @@ ion-item {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: white;    
 }
 
 .planner { 
     background-color: #ffffff;
+    padding: 2%;
+    margin: 4% 4% 4% 10%;
 }
 
 
@@ -52,5 +53,9 @@ ion-item {
 }
 
 .joy-col { 
-    // padding-right: 7%;
+    padding-right: 5%;
+}
+
+.joy-col:hover { 
+    cursor: pointer;
 }

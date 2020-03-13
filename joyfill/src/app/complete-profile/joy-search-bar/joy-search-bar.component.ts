@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
 
 import { FirestoreService } from '../../firebase-services/firestore.service';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+
 @Component({
   selector: 'app-joy-search-bar',
   templateUrl: './joy-search-bar.component.html',
@@ -22,21 +25,11 @@ export class JoySearchBarComponent implements OnInit {
     public joys: Joys,
     private userService: UserService,
     private firestoreService: FirestoreService,
+    private snackBar: MatSnackBar,
   ) { }
 
-  ngOnInit() {
-    // let citiesRef = this.db.collection("cities");
+  ngOnInit() {}
 
-    // citiesRef.doc("SF").set({
-    //   name: "San Francisco", state: "CA", country: "USA",
-    //   capital: false, population: 860000,
-    //   regions: ["west_coast", "norcal"] 
-    // });
-  }
-
-  /**
-   * Perform a service for the proper items.
-   */
   getItems(ev) {
     const val = ev.target.value;
     if (!val || !val.trim()) {
@@ -48,28 +41,20 @@ export class JoySearchBarComponent implements OnInit {
     });
   }
 
-  /**
-   * Navigate to the detail page for this item.
-   */
   selectJoy(joy) {
     console.log('Joy', joy);
     if (!this.selectedJoys.has(joy)) {
       this.selectedJoys.add(joy);
-      // show mat snak bar
-
+      this.openSnackBar('Updated joys', 'YeeHaw!');
     } else {
-      // show error snack bar
+      this.openSnackBar('You already have this joy', 'Okay!');
     }
-    this.currentJoys = [];
-    // this.navCtrl.push('ItemDetailPage', {
-    //   item: joy
-    // });
   }
 
   submitJoys() {
     this.userService.currentUser.joys = this.setToArray(this.selectedJoys);
     this.firestoreService.setUserProfile(this.userService.currentUser);
-    this.router.navigate(['home']);
+    this.router.navigate(['profile']);
   }
 
   setToArray(joys) {
@@ -78,6 +63,12 @@ export class JoySearchBarComponent implements OnInit {
       joyArray.push(joy);
     }
     return joyArray;
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 
 }

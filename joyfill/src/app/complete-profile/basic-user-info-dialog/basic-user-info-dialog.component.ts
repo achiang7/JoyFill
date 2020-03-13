@@ -40,7 +40,7 @@ export class BasicUserInfoDialogComponent implements OnInit {
     this.userService.currentUser.firstName = value.firstName;
     this.userService.currentUser.lastName = value.lastName;
     this.userService.currentUser.uid = this.authService.getUid();
-    localStorage.set('uid', this.userService.currentUser.uid);
+    localStorage.setItem('uid', this.userService.currentUser.uid);
 
     // open new dialog
     const dialogConfig = new MatDialogConfig();

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-joycard',
@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoycardComponent implements OnInit {
 
+  @Input() joy;
+
   constructor() { }
 
   ngOnInit() {}
+
+  scheduleActivity() {
+     // open dialog to schedule an activity for this joy
+  }
 
 }
