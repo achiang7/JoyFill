@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
 
 import { FirestoreService } from '../../firebase-services/firestore.service';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+
 @Component({
   selector: 'app-joy-search-bar',
   templateUrl: './joy-search-bar.component.html',
@@ -22,11 +25,10 @@ export class JoySearchBarComponent implements OnInit {
     public joys: Joys,
     private userService: UserService,
     private firestoreService: FirestoreService,
+    private snackBar: MatSnackBar,
   ) { }
 
-  ngOnInit() {
- 
-  }
+  ngOnInit() {}
 
   getItems(ev) {
     const val = ev.target.value;
@@ -43,12 +45,10 @@ export class JoySearchBarComponent implements OnInit {
     console.log('Joy', joy);
     if (!this.selectedJoys.has(joy)) {
       this.selectedJoys.add(joy);
-      // show mat snak bar
-
+      this.openSnackBar('Updated joys', 'YeeHaw!');
     } else {
-      // show error snack bar
+      this.openSnackBar('You already have this joy', 'Okay!');
     }
-    // this.currentJoys = [];
   }
 
   submitJoys() {
@@ -63,6 +63,12 @@ export class JoySearchBarComponent implements OnInit {
       joyArray.push(joy);
     }
     return joyArray;
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 
 }

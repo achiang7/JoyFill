@@ -27,7 +27,12 @@
         <ion-item lines="none" class="joy-row">
           <ion-grid>
             <ion-row>
-              <ion-col class="joy-col" size="2.8" *ngFor="let joy of this.profileUser.joys" (click)="this.displayedJoy = joy">
+              <ion-col class="joy-col" size="3" (click)="goToJoyMap()">
+                <img [src]="'assets/icon/joymap.png'" />
+                Joymap
+                <br>&nbsp;
+              </ion-col>
+              <ion-col class="joy-col" size="3" *ngFor="let joy of this.profileUser.joys" (click)="this.displayedJoy = joy">
                 <img [src]="joy.joyIcon" />
                 {{ joy.name }}
                 <br>&nbsp;

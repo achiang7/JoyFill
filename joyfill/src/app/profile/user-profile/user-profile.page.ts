@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { FirestoreService } from 'src/app/firebase-services/firestore.service';
 import { User } from 'src/app/shared/user.class';
@@ -26,6 +26,7 @@ export class UserProfilePage implements OnInit {
   constructor(
     private userService: UserService,
     private firestoreService: FirestoreService,
+    private router: Router,
     private route: ActivatedRoute
   ) { }
 
@@ -50,6 +51,11 @@ export class UserProfilePage implements OnInit {
         this.displayedJoy = this.profileUser.joys[0];
       }
     );
+  }
+
+  goToJoyMap() {
+    console.log('going ok going');
+    this.router.navigate(['profile/joymap']);
   }
 
 }
