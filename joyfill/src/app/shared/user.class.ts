@@ -6,4 +6,5 @@ export class User {
     public lastName: string;
     public email: string;
     public joys: any[];
+    public joyLevel;
 }
