@@ -27,7 +27,7 @@
         <ion-item lines="none" class="joy-row">
           <ion-grid>
             <ion-row>
-              <ion-col class="joy-col" size="2.8" *ngFor="let joy of this.profileUser.joys" (click)="displayJoyCard(joy)">
+              <ion-col class="joy-col" size="2.8" *ngFor="let joy of this.profileUser.joys" (click)="this.displayedJoy = joy">
                 <img [src]="joy.joyIcon" />
                 {{ joy.name }}
                 <br>&nbsp;
@@ -38,11 +38,10 @@
       </ion-col>
 
       <ion-col class="planner" style="margin-left: 10%;">
-        <!-- <div *ngFor="let user of this.firestoreService.users | async">
-          {{ user | json }}
-        </div> -->
-        <app-planner *ngIf="this.ownsProfile"></app-planner>
-        <app-joycard *ngIf="!this.ownsProfile"></app-joycard>
+        <!-- <app-planner *ngIf="this.ownsProfile"></app-planner>
+        <app-joycard *ngIf="!this.ownsProfile"></app-joycard> -->
+        <app-joycard [joy]="displayedJoy"></app-joycard>
+
       </ion-col>
 
     </ion-row>

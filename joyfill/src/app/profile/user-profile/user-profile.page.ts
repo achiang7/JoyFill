@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+
 import { FirestoreService } from 'src/app/firebase-services/firestore.service';
 import { User } from 'src/app/shared/user.class';
 
@@ -20,6 +19,8 @@ export class UserProfilePage implements OnInit {
   welcomeHeadline: string;
   introMsg: string;
 
+  displayedJoy;
+
   showingJoy = false;
 
   constructor(
@@ -29,15 +30,6 @@ export class UserProfilePage implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    console.log(this.userService.currentUser.firstName);
-    console.log(this.userService.currentUser.joys);
-
-
-    // if current logged in user is same as current profile use, display planner
-    // else:
-    // 1. display their first joy -- joycard component
-    // 2. hide right panel, show panel when a category is selected
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
         this.ownsProfile = params.get('uid') === null;
@@ -50,19 +42,14 @@ export class UserProfilePage implements OnInit {
         if (this.ownsProfile) {
           this.welcomeHeadline = 'Hi ' + this.profileUser.firstName;
           this.introMsg = 'Welcome back to your Joyspace!';
-        } else { 
+        } else {
           this.welcomeHeadline = 'Welcome to ' + this.profileUser.firstName + "/'s Joyspace!";
           this.introMsg = '';
         }
 
+        this.displayedJoy = this.profileUser.joys[0];
       }
     );
-
-  }
-
-  displayJoyCard(joy) {
-    this.showingJoy = true;
-    console.log(joy);
   }
 
 }

@@ -24,7 +24,6 @@ ion-title {
 
 ion-col { 
     text-align: center;
-    margin: 0.75%;
     border-radius: 20px;
 }
 
@@ -44,11 +43,17 @@ ion-item {
 
 .planner { 
     background-color: #ffffff;
+    padding: 2%;
+    margin: 4% 4% 4% 10%;
 }
 
 
 .joy-row { 
     left: -3%;
+}
+
+.joy-col { 
+    // margin: 1%;
 }
 
 .joy-col:hover { 
