@@ -8,6 +8,8 @@ import { UserProfilePageRoutingModule } from './user-profile-routing.module';
 
 import { UserProfilePage } from './user-profile/user-profile.page';
 import { UserJoymapPage } from './user-joymap/user-joymap.page';
+import { JoycardComponent } from './joycard/joycard.component';
+import { PlannerComponent } from './planner/planner.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import { UserJoymapPage } from './user-joymap/user-joymap.page';
   ],
   declarations: [
     UserProfilePage,
-    UserJoymapPage
+    UserJoymapPage,
+    JoycardComponent,
+    PlannerComponent
   ]
 })
 export class UserProfilePageModule {}

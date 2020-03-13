@@ -4,6 +4,8 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { AuthenticationService } from '../services/authentication';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
+import { UserService } from 'src/app/services/user.service';
+import { FirestoreService } from 'src/app/firebase-services/firestore.service';
 
 @Component({
   selector: 'app-login-dialog',
@@ -28,10 +30,12 @@ export class LoginDialogComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
+    private firestoreService: FirestoreService,
     private formBuilder: FormBuilder,
     private router: Router,
 
-    private dialogRef: MatDialogRef<LoginDialogComponent>
+    private dialogRef: MatDialogRef<LoginDialogComponent>,
+    private userService: UserService,
   ) { }
 
   ngOnInit() {
@@ -51,7 +55,11 @@ export class LoginDialogComponent implements OnInit {
     this.authService.doLogin(value)
     .then(res => {
       this.closeDialog();
-      this.router.navigate(['/home']);
+      localStorage.setItem('uid', this.authService.getUid());
+      this.firestoreService.populateLocalUser(localStorage.getItem('uid'));
+      this.router.navigate(['/profile', { uid: localStorage.getItem('uid') }]);
+
+      // this.router.navigate(['/home']);
     }, err => {
       this.errorMessage = err.message;
       console.log(err)

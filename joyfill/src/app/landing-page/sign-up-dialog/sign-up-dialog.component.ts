@@ -8,6 +8,8 @@ import { MustMatch } from './must-match.validator';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 // tslint:disable-next-line: max-line-length
 import { PostSignupRedirectDialogComponent } from 'src/app/complete-profile/post-signup-redirect-dialog/post-signup-redirect-dialog.component';
+import { FirestoreService } from 'src/app/firebase-services/firestore.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-sign-up-dialog',
@@ -35,10 +37,11 @@ export class SignUpDialogComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
+    private userService: UserService,
     private formBuilder: FormBuilder,
     private dialog: MatDialog,
     private dialogRef: MatDialogRef<SignUpDialogComponent>,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -68,6 +71,7 @@ export class SignUpDialogComponent implements OnInit {
        this.errorMessage = '';
        this.successMessage = 'Your account has been successfully created.';
        this.authService.updateUserProfile({email: value.email});
+       this.userService.currentUser.email = value.email;
 
        // user is authenticated (aka they're considered as logged in)
        // this.authService.setAuthenticated(true);
