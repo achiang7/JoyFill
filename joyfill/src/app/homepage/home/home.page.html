@@ -1,17 +1,20 @@
-<ion-header>
-  <ion-toolbar id="toolbar-style">
-    <img id="logo-style" src="../../assets/logo.png" alt="Joyfill Logo">
-  </ion-toolbar>
-</ion-header>
+  <ion-buttons slot="start" color="secondary" [class.show-background]="showToolbar">
+    <ion-menu-button autoHide="false"></ion-menu-button>
+  </ion-buttons>
+
+  <app-menu></app-menu>
+
 
 <ion-content [fullscreen]="true">
-  <div id="main">
-    <div id="container">
-      <graph [nodes]="nodes" [links]="links"></graph>
-    </div>
-    <div id="inv">
-      <h1>Notifications</h1>
-      <app-notifications></app-notifications>
-    </div>
+<div id="main">
+  <div id="container">
+
+    <graph [nodes]="nodes" [links]="links"></graph>
   </div>
+  <div id="inv">
+    <h1>Notifications</h1>
+    <app-notifications></app-notifications>
+  </div>
+</div>
 </ion-content>
+

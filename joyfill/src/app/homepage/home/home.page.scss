@@ -2,16 +2,22 @@
 
 $font: 'Lato', sans-serif;
 
-/* Header Styles */
-#toolbar-style{
-  --background: #201F6C;
+/* Menu Style */
+#sidemenu {
+  float: left;
+  padding: 20px 0 0 20px;
 }
 
-#logo-style {
-  width: 150px;
-  padding-left: 20px;
-  padding-top: 5px;
-  height: auto;
+ion-buttons {
+  --background-color: transparent;
+  --ion-color-base: transparent !important;
+  position: absolute;
+  margin-left: 2vw;
+  margin-top: 2vw;
+}
+
+ion-menu-button {
+  --background-color: #000000;
 }
 
 /* Diagram Style */

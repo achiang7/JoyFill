@@ -12,12 +12,14 @@ export class Node implements d3.SimulationNodeDatum {
   name: string;
   value: number;
   group: number;
+  icon: string
 
   constructor(nodeArray) {
     this.id = nodeArray.id;
     this.name = nodeArray.name;
     this.value = nodeArray.value;
     this.group = nodeArray.group;
+    this.icon = nodeArray.icon;
   }
 
   get r() {
@@ -29,7 +31,7 @@ export class Node implements d3.SimulationNodeDatum {
   }
 
   get dy() {
-    return (this.value / 2) * 1.3 + 'px';
+    return (this.value / 2) * 1.5 + 'px';
   }
 
   get color() {

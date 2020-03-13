@@ -12,4 +12,13 @@
         [attr.dy]="node.dy">
       {{node.name}}
     </svg:text>
+    <svg:image
+        class="node-icon"
+        [attr.xlink:href]="node.icon"
+        [attr.x]="-node.r"
+        [attr.y]="-node.r"
+        [attr.height]="node.r * 2"
+        [attr.width]="node.r * 2">
+      {{node.icon}}
+    </svg:image>
   </svg:g>

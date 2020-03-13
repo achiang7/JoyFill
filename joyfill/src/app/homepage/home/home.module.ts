@@ -12,6 +12,7 @@ import { HomePage } from './home.page';
 import { GraphComponent } from './visuals/graph/graph.component';
 import { SHARED_VISUALS } from './visuals/shared';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { MenuComponent } from '../../shared/menu/menu.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
   declarations: [
     HomePage,
     GraphComponent,
+    MenuComponent,
     NotificationsComponent,
     ...SHARED_VISUALS,
     ...D3_DIRECTIVES
