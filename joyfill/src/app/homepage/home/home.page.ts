@@ -21,7 +21,7 @@ export class HomePage implements OnInit {
     private firestoreService: FirestoreService,
     private authService: AuthenticationService,
   ) {
-    var networkNodes = data.nodes;
+    let networkNodes = data.nodes;
     //var networkLinks = data.links;
     
     /** constructing the nodes array */
@@ -41,10 +41,12 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     if (this.userService.currentUser.firstName === undefined) {
+      console.log(this.userService.currentUser);
       let uid = localStorage.getItem('uid');
-      if (uid !== null){
+      if (uid === null){
         console.log('UID is not stored in localstorage -- this should not be happening');
         uid = this.authService.getUid();
+        localStorage.setItem('uid', uid);
       }
       this.firestoreService.populateLocalUser(uid);
     }
