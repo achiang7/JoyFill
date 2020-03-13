@@ -10,6 +10,7 @@ import { UserProfilePage } from './user-profile/user-profile.page';
 import { UserJoymapPage } from './user-joymap/user-joymap.page';
 import { JoycardComponent } from './joycard/joycard.component';
 import { PlannerComponent } from './planner/planner.component';
+import { MenuComponent } from '../shared/menu/menu.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,9 @@ import { PlannerComponent } from './planner/planner.component';
     UserProfilePage,
     UserJoymapPage,
     JoycardComponent,
-    PlannerComponent
+    PlannerComponent,
+    MenuComponent
+
   ]
 })
 export class UserProfilePageModule {}

@@ -119,7 +119,7 @@ export class Joys {
       },
       {
         name: 'Ping Pong',
-        joyIcon: 'assets/joy-icons/ping-pong.png',
+        joyIcon: 'assets/joy-icons/pingpong.png',
         category: 'Sports',
         notes: ''
       },
