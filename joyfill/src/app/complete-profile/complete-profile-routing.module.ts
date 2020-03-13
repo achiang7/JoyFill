@@ -22,7 +22,7 @@ const routes: Routes = [
     ]
   },
   // {
-  //   path: 'joy-search-bar', 
+  //   path: 'joy-search-bar',
   //   component: JoySearchBarComponent
   // }
 ];

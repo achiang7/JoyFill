@@ -1,0 +1,56 @@
+
+ion-content { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+ion-searchbar { 
+    padding-left: 0px;
+    border-radius: 3px;
+    margin-top: 2%;
+    width: 90%;
+}
+
+ion-grid, ion-row {
+    background-color: #252a41;
+    height: 100%;     
+}
+
+ion-title { 
+    font-size: 33px;
+    padding-left: 0px;
+}
+
+ion-col { 
+    text-align: center;
+    margin: 0.75%;
+    border-radius: 20px;
+}
+
+ion-item { 
+    --background: #252a41;
+    color: white;
+    width: 60%;
+}
+
+.overview { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.planner { 
+    background-color: #ffffff;
+}
+
+
+.joy-row { 
+    left: -3%;
+}
+
+.joy-col { 
+    // padding-right: 7%;
+}

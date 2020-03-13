@@ -35,6 +35,11 @@ export class AuthenticationService {
     return firebase.auth().currentUser.uid;
   }
 
+  getUser() { 
+    console.log(firebase.auth().currentUser);
+    return firebase.auth().currentUser;
+  }
+
   doRegister(value) {
     return new Promise<any>((resolve, reject) => {
       firebase
