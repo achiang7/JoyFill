@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Node, Link } from './d3';
 import * as firebase from 'firebase/app';
+import data from '../../../assets/json/data.json';
 import { UserService } from 'src/app/services/user.service';
 import { FirestoreService } from 'src/app/firebase-services/firestore.service';
 import { AuthenticationService } from 'src/app/landing-page/services/authentication';
@@ -11,12 +13,31 @@ import { AuthenticationService } from 'src/app/landing-page/services/authenticat
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
+  nodes: Node[] = [];
+  links: Link[] = [];
+  
   constructor(
     private userService: UserService,
     private firestoreService: FirestoreService,
     private authService: AuthenticationService,
-  ) { }
+  ) {
+    var networkNodes = data.nodes;
+    //var networkLinks = data.links;
+    
+    /** constructing the nodes array */
+    for (let i = 0; i <= networkNodes.length - 1; i++) {
+      this.nodes.push(new Node(networkNodes[i]));
+    }
+
+    /** constructing the links array */
+    this.links.push(new Link(this.nodes[0], this.nodes[1]));
+    this.links.push(new Link(this.nodes[0], this.nodes[2]));
+    this.links.push(new Link(this.nodes[0], this.nodes[3]));
+    this.links.push(new Link(this.nodes[0], this.nodes[4]));
+    this.links.push(new Link(this.nodes[4], this.nodes[5]));
+    this.links.push(new Link(this.nodes[4], this.nodes[6]));
+    this.links.push(new Link(this.nodes[4], this.nodes[7]));
+  }
 
   ngOnInit() {
     if (this.userService.currentUser.firstName === undefined) {
@@ -31,5 +52,4 @@ export class HomePage implements OnInit {
     // const user = firebase.auth().currentUser;
     // console.log(user);
   }
-
 }

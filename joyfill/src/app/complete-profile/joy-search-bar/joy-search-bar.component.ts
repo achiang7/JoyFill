@@ -13,7 +13,6 @@ import { FirestoreService } from '../../firebase-services/firestore.service';
 })
 export class JoySearchBarComponent implements OnInit {
 
-
   currentJoys: any = [];
   selectedJoys: any = new Set();
 

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,300i,400,400i,500,600,700,800,900&display=swap');
+
+.node {
+  cursor: pointer;
+  transition: stroke-width 0.1s ease-out,
+      fill 0.1s ease-out,
+      stroke 0.1s ease-out;
+  stroke: lightblue;
+  stroke-width: 15;
+}
+
+.node-name {
+  font-family: 'Montserrat', sans-serif;
+  text-anchor: middle;
+  alignment-baseline: central;
+  font-weight: 300;
+  fill: black;
+}

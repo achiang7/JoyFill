@@ -1,0 +1,33 @@
+/* Header Style */
+
+#logo-style {
+    width: 175px;
+    height: auto;
+    padding: 15px 0 5px 15px;
+}
+
+/* Menu Style */
+
+.menu-style {
+    --width: 25%;
+}
+
+/* Menu Item Style */
+
+ion-item {
+    margin-left: 1vw;
+}
+
+#icon-style {
+    height: auto;
+    width: 7%;
+    margin-right: 15px;
+}
+
+p {
+    font-size: 1.2vw;
+}
+
+.active-item {
+    border-left: 8px solid var(--ion-color-primary);
+}

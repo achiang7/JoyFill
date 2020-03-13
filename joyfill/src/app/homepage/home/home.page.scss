@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+$font: 'Lato', sans-serif;
+
+/* Menu Style */
+#sidemenu {
+  float: left;
+  padding: 20px 0 0 20px;
+}
+
+ion-buttons {
+  --background-color: transparent;
+  --ion-color-base: transparent !important;
+  position: absolute;
+  margin-left: 2vw;
+  margin-top: 2vw;
+}
+
+ion-menu-button {
+  --background-color: #000000;
+}
+
+/* Diagram Style */
+#main {
+  min-height: 100vh;
+  display: flex;
+  background-color: #252a41;
+}
+
+#container {
+  background-color: white;
+  border-radius: 15px;
+  width: 65vw;
+  margin: 15px 0 15px 15px;
+}
+
+/* Notification Style */
+#inv {
+  width: 35vw;
+  background-color: white;
+  border-radius: 15px;
+  margin: 15px 15px 15px 15px;
+}
+
+h1 {
+  text-align: center;
+}

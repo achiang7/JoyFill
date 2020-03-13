@@ -1,0 +1,18 @@
+<ion-card *ngFor="let item of items" [id]="item.status">
+  <div class="dot"></div>
+  <div class="dot two"></div>
+  <div id="container">
+    <img id="profile-photo" [src]="item.profilePhoto"/>
+    <ion-card-content>
+      <ion-card-title *ngIf=" item.status == 'negative'">
+        {{item.title}} needs Joy!
+      </ion-card-title>
+      <ion-card-title *ngIf=" item.status == 'positive'">
+        {{item.title}} sent an Invite!
+      </ion-card-title>  
+      <p>{{item.joy}}</p>
+    </ion-card-content>
+  </div>
+  <ion-button *ngIf="item.status == 'positive'">Accept</ion-button>
+  <ion-button *ngIf="item.status == 'negative'">Invest</ion-button> 
+</ion-card>
