@@ -33,16 +33,13 @@ ion-menu-button {
 
 #container {
   background-color: #252a41;
-  height: 100vh;
-  width: 82vw;
+  width: 70vw;
 }
 
 /* Notification Style */
 #inv {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 82vw;
-  background-color: lightgray;
+  width: 30vw;
+  background-color: white;
 }
 
 h1 {
@@ -59,7 +56,7 @@ h1 {
 .panel-left {
   /* only manually resize */
   height: 100vh;
-  width: 17vw;
+  width: 10vw;
   white-space: nowrap;
   background: white;
   color: white;
