@@ -12,23 +12,23 @@ export class MenuComponent implements OnInit {
   pages = [
     {
       title: 'Home',
-      url: './menu/first',
+      url: '/home',
       image: '../../../assets/icon/home.png'
     },
     {
       title: 'Profile',
-      url: '.menu/second',
+      url: '/profile',
       image: '../../../assets/icon/user.png'
     },
     {
       title: 'Settings',
-      url: '.menu/third',
+      url: '/settings',
       image: '../../../assets/icon/settings.png'
     },
     {
-      title: 'Search',
-      url: '.menu/fourth',
-      image: '../../../assets/icon/research.png'
+      title: 'Log Out',
+      url: '/overview',
+      image: '../../../assets/icon/logout.png'
     }
   ];
 

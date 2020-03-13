@@ -1,4 +1,4 @@
-/*import { Directive, Input, ElementRef, OnInit } from '@angular/core';
+import { Directive, Input, ElementRef, OnInit } from '@angular/core';
 import { D3Service } from '../d3.service';
 
 @Directive({
@@ -13,4 +13,3 @@ export class ZoomableDirective implements OnInit {
         this.d3Service.applyZoomableBehaviour(this.zoomableOf, this._element.nativeElement);
     }
 }
-*/

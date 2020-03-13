@@ -14,9 +14,9 @@ ion-card {
     border-radius: 15px;
     box-shadow: 5px 5px 20px rgba($gray, 10%);
     perspective: 40px;
-    margin: 15px;
+    margin: 15px 30px 15px 30px;
     &:hover {
-        transform: scale(1.02);
+        transform: scale(1.01);
         transition: all .3s ease-in-out;
     }
 }
@@ -37,7 +37,7 @@ ion-card {
 }
 
 ion-card-title {
-    font-size: 1.4em;
+    font-size: 1.5em;
     font-weight: 100;
     letter-spacing: 3px;
     color: $white;
@@ -92,7 +92,7 @@ button, .dot {
 }
 
 .two {
-  right: 7%;
+  right: 3%;
   opacity: .5;
 }
 

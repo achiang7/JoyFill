@@ -27,21 +27,40 @@ ion-menu-button {
   background-color: #252a41;
 }
 
+#sidemenu {
+  width: 20vw;
+}
+
 #container {
-  background-color: white;
-  border-radius: 15px;
-  width: 65vw;
-  margin: 15px 0 15px 15px;
+  background-color: #252a41;
+  height: 100vh;
+  width: 82vw;
 }
 
 /* Notification Style */
 #inv {
-  width: 35vw;
-  background-color: white;
-  border-radius: 15px;
-  margin: 15px 15px 15px 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 82vw;
+  background-color: lightgray;
 }
 
 h1 {
   text-align: center;
+}
+
+/* horizontal panel*/
+
+.panel-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.panel-left {
+  /* only manually resize */
+  height: 100vh;
+  width: 17vw;
+  white-space: nowrap;
+  background: white;
+  color: white;
 }

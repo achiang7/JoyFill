@@ -10,7 +10,7 @@ export class D3Service {
   constructor() { }
 
   /** A method to bind a pan and zoom behaviour to an svg element */
-  /*applyZoomableBehaviour(svgElement, containerElement) {
+  applyZoomableBehaviour(svgElement, containerElement) {
     let svg, container, zoomed, zoom;
 
     svg = d3.select(svgElement);
@@ -23,7 +23,7 @@ export class D3Service {
 
     zoom = d3.zoom().on('zoom', zoomed);
     svg.call(zoom);
-  }*/
+  }
 
   /** A method to bind a draggable behaviour to an svg element */
   applyDraggableBehaviour(element, node: Node, graph: ForceDirectedGraph) {
