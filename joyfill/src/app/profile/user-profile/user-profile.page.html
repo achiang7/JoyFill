@@ -8,12 +8,12 @@
   <ion-grid>
     <ion-row>
       
-      <ion-col class="overview">
+      <ion-col class="overview" style="margin-left: 7%;">
         <ion-item lines="none" id="welcome">
           <ion-label class="ion-text-wrap">
-            <ion-title>Hi Anthony</ion-title>
+            <ion-title>{{ this.welcomeHeadline }}</ion-title>
             <ion-text style="color: grey">
-              <p>Welcome back to your workspace!</p>
+              <p>{{ this.introMsg }}</p>
             </ion-text>
           </ion-label>
         </ion-item>
@@ -23,49 +23,21 @@
         </ion-item>
 
         <br><br><br>
-        <ion-item lines="none" style="margin-bottom: -1%;">
-          <ion-text>Joys</ion-text>
-        </ion-item>
 
-        <ion-item lines="none" class="joy-row" style="width: 60%">
+        <ion-item lines="none" class="joy-row">
           <ion-grid>
             <ion-row>
-              <ion-col class="joy-col" size="3.5">
-                <ion-card class="ion-no-padding">
-                  <img src="../../../assets/icon/testicon.png">
-                </ion-card>
-                hi<br>&nbsp;
-                <ion-card>
-                  <img src="../../../assets/icon/testicon.png">
-                </ion-card>
-                hi<br>&nbsp;
-              </ion-col>
-              <ion-col class="joy-col" size="3.5">
-                <ion-card>
-                  <img src="../../../assets/icon/testicon.png">
-                </ion-card>
-                hi<br>&nbsp;
-                <ion-card>
-                  <img src="../../../assets/icon/testicon.png">
-                </ion-card>
-                hi<br>&nbsp;
-              </ion-col>
-              <ion-col class="joy-col" size="3.5">
-                <ion-card>
-                  <img src="../../../assets/icon/testicon.png">
-                </ion-card>
-                hi<br>&nbsp;
-                <ion-card>
-                  <img src="../../../assets/icon/testicon.png">
-                </ion-card>
-                hi<br>&nbsp;
+              <ion-col class="joy-col" size="2.8" *ngFor="let joy of this.profileUser.joys" (click)="displayJoyCard(joy)">
+                <img [src]="joy.joyIcon" />
+                {{ joy.name }}
+                <br>&nbsp;
               </ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>
       </ion-col>
 
-      <ion-col class="planner">
+      <ion-col class="planner" style="margin-left: 10%;">
         <!-- <div *ngFor="let user of this.firestoreService.users | async">
           {{ user | json }}
         </div> -->
@@ -76,3 +48,4 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+

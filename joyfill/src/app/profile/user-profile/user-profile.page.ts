@@ -5,6 +5,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { FirestoreService } from 'src/app/firebase-services/firestore.service';
+import { User } from 'src/app/shared/user.class';
 
 @Component({
   selector: 'app-user-profile',
@@ -14,7 +15,12 @@ import { FirestoreService } from 'src/app/firebase-services/firestore.service';
 export class UserProfilePage implements OnInit {
 
   ownsProfile: boolean;
-  profileUser;
+  profileUser: User;
+
+  welcomeHeadline: string;
+  introMsg: string;
+
+  showingJoy = false;
 
   constructor(
     private userService: UserService,
@@ -23,9 +29,10 @@ export class UserProfilePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (this.userService.currentUser.firstName === undefined) {
-      this.firestoreService.populateLocalUser(localStorage.getItem('uid'));
-    }
+
+    console.log(this.userService.currentUser.firstName);
+    console.log(this.userService.currentUser.joys);
+
 
     // if current logged in user is same as current profile use, display planner
     // else:
@@ -34,14 +41,28 @@ export class UserProfilePage implements OnInit {
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
         this.ownsProfile = params.get('uid') === null;
-        if (this.ownsProfile){
+        if (this.ownsProfile) {
           this.profileUser = this.userService.currentUser;
         } else {
           this.profileUser = this.firestoreService.makeUserCopy(params.get('uid'));
         }
-        console.log(this.profileUser);
+
+        if (this.ownsProfile) {
+          this.welcomeHeadline = 'Hi ' + this.profileUser.firstName;
+          this.introMsg = 'Welcome back to your Joyspace!';
+        } else { 
+          this.welcomeHeadline = 'Welcome to ' + this.profileUser.firstName + "/'s Joyspace!";
+          this.introMsg = '';
+        }
+
       }
-    )
+    );
+
+  }
+
+  displayJoyCard(joy) {
+    this.showingJoy = true;
+    console.log(joy);
   }
 
 }

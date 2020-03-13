@@ -7,13 +7,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class AuthenticationService {
 
-  // userAuthenticated = false;
-
   constructor(public afAuth: AngularFireAuth) {}
-
-  // setAuthenticated(value: boolean){
-  //   this.userAuthenticated = value;
-  // }
 
   isAuthenticated() {
     return new Promise<any>((resolve, reject) => {
@@ -35,7 +29,7 @@ export class AuthenticationService {
     return firebase.auth().currentUser.uid;
   }
 
-  getUser() { 
+  getUser() {
     console.log(firebase.auth().currentUser);
     return firebase.auth().currentUser;
   }

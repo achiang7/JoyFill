@@ -25,18 +25,9 @@ export class JoySearchBarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // let citiesRef = this.db.collection("cities");
-
-    // citiesRef.doc("SF").set({
-    //   name: "San Francisco", state: "CA", country: "USA",
-    //   capital: false, population: 860000,
-    //   regions: ["west_coast", "norcal"] 
-    // });
+ 
   }
 
-  /**
-   * Perform a service for the proper items.
-   */
   getItems(ev) {
     const val = ev.target.value;
     if (!val || !val.trim()) {
@@ -48,9 +39,6 @@ export class JoySearchBarComponent implements OnInit {
     });
   }
 
-  /**
-   * Navigate to the detail page for this item.
-   */
   selectJoy(joy) {
     console.log('Joy', joy);
     if (!this.selectedJoys.has(joy)) {
@@ -60,16 +48,13 @@ export class JoySearchBarComponent implements OnInit {
     } else {
       // show error snack bar
     }
-    this.currentJoys = [];
-    // this.navCtrl.push('ItemDetailPage', {
-    //   item: joy
-    // });
+    // this.currentJoys = [];
   }
 
   submitJoys() {
     this.userService.currentUser.joys = this.setToArray(this.selectedJoys);
     this.firestoreService.setUserProfile(this.userService.currentUser);
-    this.router.navigate(['home']);
+    this.router.navigate(['profile']);
   }
 
   setToArray(joys) {

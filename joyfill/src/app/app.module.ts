@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -84,7 +84,13 @@ import { FirestoreService } from './firebase-services/firestore.service';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     UserService,
-    FirestoreService
+    FirestoreService, 
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (us: UserService) => () => us.init(),
+      deps: [UserService],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

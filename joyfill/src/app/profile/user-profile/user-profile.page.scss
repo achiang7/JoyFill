@@ -31,7 +31,7 @@ ion-col {
 ion-item { 
     --background: #252a41;
     color: white;
-    width: 60%;
+    width: 80%;
 }
 
 .overview { 
@@ -39,7 +39,7 @@ ion-item {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: white;    
 }
 
 .planner { 
@@ -51,6 +51,6 @@ ion-item {
     left: -3%;
 }
 
-.joy-col { 
-    // padding-right: 7%;
+.joy-col:hover { 
+    cursor: pointer;
 }

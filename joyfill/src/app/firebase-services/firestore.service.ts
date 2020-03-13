@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs';
 import { UserService } from '../services/user.service';
 import { User } from '../shared/user.class';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class FirestoreService {
@@ -13,6 +14,7 @@ export class FirestoreService {
     constructor(
         private db: AngularFirestore, 
         private userService: UserService,
+        private router: Router
     ) { }
 
     setUserProfile(user){
@@ -36,6 +38,9 @@ export class FirestoreService {
             for (const key of keys) {
                 this.userService.currentUser[key] = data[key];
             }
+            console.log(this.userService.currentUser);
+            this.router.navigate(['/profile']);
+
         });
     }
 

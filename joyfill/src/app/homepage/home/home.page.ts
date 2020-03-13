@@ -48,7 +48,7 @@ export class HomePage implements OnInit {
         uid = this.authService.getUid();
         localStorage.setItem('uid', uid);
       }
-      this.firestoreService.populateLocalUser(uid);
+      // this.firestoreService.populateLocalUser(uid);
     }
 
     // const user = firebase.auth().currentUser;
