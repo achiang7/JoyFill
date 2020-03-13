@@ -1,9 +1,78 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>user-profile</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      
+      <ion-col class="overview">
+        <ion-item lines="none" id="welcome">
+          <ion-label class="ion-text-wrap">
+            <ion-title>Hi Anthony</ion-title>
+            <ion-text style="color: grey">
+              <p>Welcome back to your workspace!</p>
+            </ion-text>
+          </ion-label>
+        </ion-item>
 
+        <ion-item lines="none" id="search-bar">
+          <ion-searchbar></ion-searchbar>
+        </ion-item>
+
+        <br><br><br>
+        <ion-item lines="none" style="margin-bottom: -1%;">
+          <ion-text>Joys</ion-text>
+        </ion-item>
+
+        <ion-item lines="none" class="joy-row" style="width: 60%">
+          <ion-grid>
+            <ion-row>
+              <ion-col class="joy-col" size="3.5">
+                <ion-card class="ion-no-padding">
+                  <img src="../../../assets/icon/testicon.png">
+                </ion-card>
+                hi<br>&nbsp;
+                <ion-card>
+                  <img src="../../../assets/icon/testicon.png">
+                </ion-card>
+                hi<br>&nbsp;
+              </ion-col>
+              <ion-col class="joy-col" size="3.5">
+                <ion-card>
+                  <img src="../../../assets/icon/testicon.png">
+                </ion-card>
+                hi<br>&nbsp;
+                <ion-card>
+                  <img src="../../../assets/icon/testicon.png">
+                </ion-card>
+                hi<br>&nbsp;
+              </ion-col>
+              <ion-col class="joy-col" size="3.5">
+                <ion-card>
+                  <img src="../../../assets/icon/testicon.png">
+                </ion-card>
+                hi<br>&nbsp;
+                <ion-card>
+                  <img src="../../../assets/icon/testicon.png">
+                </ion-card>
+                hi<br>&nbsp;
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-col>
+
+      <ion-col class="planner">
+        <!-- <div *ngFor="let user of this.firestoreService.users | async">
+          {{ user | json }}
+        </div> -->
+        <app-planner *ngIf="this.ownsProfile"></app-planner>
+        <app-joycard *ngIf="!this.ownsProfile"></app-joycard>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>

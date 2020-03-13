@@ -2,11 +2,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { UserProfilePage } from './user-profile/user-profile.page';
+import { UserJoymapPage } from './user-joymap/user-joymap.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: UserProfilePage
+    children: [
+      {
+        path: '',
+        children: [
+          { path: 'joymap', component: UserJoymapPage },
+          { path: '', component: UserProfilePage }
+        ]
+      }
+    ]
   }
 ];
 
