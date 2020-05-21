@@ -1,24 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,300i,400,400i,500,600,700,800,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
-
-
-// this doesn't work
-:host {
-  background-color: #201F6C;
-  display: block;
-  min-height: 100vh;
-
-  /*font-family: proxima-nova, sans-serif;*/
-  /*font-family: 'Raleway', "Helvetica Neue", sans-serif;*/
-  font-family: 'Montserrat', sans-serif;
-}
 
 .content {
-    background-color: #201F6C;
-    display: block;
-    min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  display: block;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
 }
 /*************************************************************
 
@@ -30,23 +16,24 @@
   justify-content: space-between;
   align-items: center;
   color: white;
-  padding-top: 3%;
-  background-color: #201F6C;
+  background-color: #99CFFF;
+  padding-top: 2vw;
 }
 
 .logo-image {
-  margin-left: 5%;
-  width: 225px;
+  margin-left: 5vw;
+  width: 13vw;
 }
 
 .action-buttons {
   display: flex;
   justify-content: space-between;
-  margin-right: 5%;
+  margin-right: 5vw;
+  padding-bottom: 1.5vw;
 }
 
 .toolbar button {
-  border-radius: 3px;
+  border-radius: 50px;
   border: 0px;
   padding: 13px 33px 13px;
   font-size: 17px;
@@ -59,240 +46,279 @@
 
 .toolbar button:hover {
   background-color: #d84f61;
-  color: #ffffff;
+  color: #062745;
 }
 
 #login {
-  /*margin-right: 10px;*/
   background-color: Transparent;
+  color: #062745;
+  font-size: 1.5vw;
+  padding: 0.5vw;
+  margin-right: 1vw;
 }
 
-#login:hover {
-  color: rgb(207, 207, 207);
+#sign-up {
+  color: white;
+  font-size: 1.5vw;
+  white-space: nowrap;
+}
+
+.joy-input {
+  background: white;
+  width: 25vw;
+  padding-left: 2vw;
+  border-radius: 50px;
+  font-size: 1.3vw;
+  border: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+textarea:focus, input:focus{
+  outline: none;
 }
 
 button:focus {
-  outline:0;
+  outline: none;
 }
 
+.joy-button {
+  margin-left: 2vw;
+  width: 10vw;
+  font-weight: 600;
+  font-size: 1.5vw;
+  height: 3vw;
+  padding: -1vw;
+  border-radius: 50px;
+  white-space: nowrap;
+  color: white;
+  background-color: #ee5367;
+  font-family: 'Montserrat', sans-serif;
+}
 
+#joy-submit button:hover {
+  background-color: #d84f61;
+  color: #062745;
+}
+
+ion-item {
+  width: 25vw;
+  font-size: 0.9em;
+  --border-radius: 30px;
+}
+
+#login:hover {
+  color: white;
+}
 
 /*************************************************************
 
                           CONTENT
 
 **************************************************************/
+.cover-img {
+  width: 35vw;
+  height: auto;
+  margin-bottom: 7vw;
+  margin-left: 3vw;
+}
+
+#slogan {
+ font-size: 4.5vw;
+ line-height: 1.5;
+ margin-left: 5vw;
+ margin-top: -10vw;
+}
+
+#sub-description {
+  font-size: 1.75vw;
+  margin-left: 5vw;
+  line-height: 1.5;
+  width: 80%;
+}
+
 .content {
   display: flex;
-  flex-direction: row;
-  padding-top: 1%;
-  padding: 1.9% 0% 3% 5%;
-
-  /* font-family: 'Montserrat', sans-serif; */
-  /* font-family: 'proxima-nova', sans-serif; */
-  /* font-family: 'open-sans', sans-serif; */
+  flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-
 }
 
-.description {
-  margin-left: 0%;
-  padding-top: 10%;
-  max-width: 50%;
-  color: #ffffff;
+.description-section {
+  background-color: #99CFFF;
+  color: #062745;
 }
 
-.sub-description {
-  font-weight: 530;
-  width: 90%;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.4;
-  white-space: nowrap;
+#joy-submit {
+  margin-top: 2.5vw;
 }
 
-.sub-description p{
-  padding-bottom: 20px;
-  font-weight: 500;
-  font-size: 25px;
+.section-style {
+  background-color: white;
+  color: white;
 }
-
-.sub-description div{
-  padding-bottom: 10px;
-}
-
-.sub-description div img{
-  width: 17px;
-}
-
-.slogan {
-  font-size: 3.9rem;
-  font-weight: 500;
-  line-height: 1.1;
-}
-
-.find-your-joy-button {
-  margin-left: -5%;
-  margin-top: 0%;
-  width: 50%;
-}
-
-.find-your-joy-button:hover {
-  cursor: pointer;
-}
-
-.cover-img {
-  width: 100%;
-}
-
-.image-section {
-  margin-right: 2%;
-  margin-top: -3%;
-}
-
-
-
 /*************************************************************
 
                           KEY-FEATURES
 
 **************************************************************/
 .key-features {
+  background-color: white;
+}
+
+.section-header {
   font-family: 'Montserrat', sans-serif;
-
-  background-color: #ffffff;
-  /* color: #292c2f; */
-  color: #201F6C;
-
+  color: #062745;
   font-weight: 600;
-  font-size: 40px;
-
-  padding-top: 3%;
+  font-size: 3.5vw;
 }
 
-.features {
-  padding-top: 3%;
-  display: flex;
-  flex-direction: column;
-  flex-flow: column nowrap;
-  align-items: center;
+.header-spacing {
+  margin-top: 2vw;
+  margin-right: 65vw;
 }
 
-.feature {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-between;
+.number {
+  margin-bottom: -0.5vw;
+  width: 3vw;
+  height: auto;
+}
 
-  margin: 0% 15% 8% 15%;
+.card-graphic {
+  width: 43vw;
+  height: auto;
+  margin-left: 3vw;
 }
-.feature p {
-  padding-top: 7%;
-  width: 100%;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.3;
-  white-space: normal;
+
+.screen-graphic {
+  width: 30vw;
+  height: auto;
 }
-#feature-description-1, #feature-description-2, #feature-description-3 {
-  margin: auto 0%;
-  width: 50%;
+
+.feature-header {
+  font-family: 'Montserrat', sans-serif;
+  color: #062745;
+  font-weight: 600;
+  font-size: 3vw;
+  margin-left: 5vw;
   white-space: nowrap;
 }
-#feature-description-2 {
-  margin-left: 10%;
-}
-#feature-description-1, #feature-description-3 {
-  margin-right: 10%;
+
+#feature-sub {
+  font-size: 1.7vw;
+  font-weight: 400;
+  margin-left: 3.8vw;
+  margin-top: 1vw;
+  white-space: normal;
+  line-height: 1.5;
 }
 
-#key-feature-subheader, #key-feature-header {
-  color: #201F6C;
-  padding-left: 15%;
+#feature-sub-secondary {
+  margin-right: 5vw;
+  font-size: 1.7vw;
+  font-weight: 400;
+  margin-left: 3.8vw;
+  margin-top: 1vw;
+  white-space: normal;
+  line-height: 1.5;
 }
 
-#key-feature-header {
-  font-size: 46px;
-  font-weight: 600;
-}
-#key-feature-subheader {
-  line-height: 3;
-  font-size: 22px;
-  font-weight: 300;
+.key-section-header {
+  background-color: white;
+  height: 5vw;
+  margin-left: 5vw;
+  margin-top: 5vw;
+  margin-bottom: 1vw;
 }
 
+#team-section-header {
+  background-color: #99CFFF;
+  height: 10vw;
+  margin-left: 5vw;
+  margin-bottom: 5vw;
+  padding-top: 4vw;
+}
 
 /*************************************************************
 
                           FOOTER
 
 **************************************************************/
-footer {
-  font-family: 'Montserrat', sans-serif;
-
-  /* background-color: #201F6C; */
-  background-color: #292c2f;
-  color: #ffffff;
-
-  padding-top: 3%;
-  padding-bottom: 20px;
+.footer-content {
+  background-color: #99CFFF;
 }
 
-.team-info {
-  font-weight: 500;
-  font-size: 40px;
-  padding-bottom: 3%;
+.team-spacing {
+  margin-top: 4vw;
+  margin-right: 60vw;
+  margin-bottom: 5vw;
+}
+
+.team-section {
+  background-color: #99CFFF;
+  color: #062745;
+}
+
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  margin-top: -15vw;
+  height: 10vw;
+  width: auto;
 }
 
 .team-members {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-between;
-
-  margin: 0% 15%;
-  padding-top: 2%;
-}
-
-
-#team-info-subheader, #team-info-header {
-  padding-left: 15%;
-}
-#team-info-header {
-  font-size: 46px;
-  font-weight: 600;
-}
-#team-info-subheader {
-  line-height: 3;
-  font-size: 22px;
-  font-weight: 300;
-}
-
-
-#member-1, #member-2, #member-3, #member-4 {
-  width: fit-content;
-  margin-top: auto;
-  margin-left: 1.3%;
-  margin-right: 1.3%;
-  text-align: center;
-}
-
-.team-members img {
+  width: 15vw;
+  height: 15vw;
   border-radius: 25px;
-  /*width: 100%; RESIZE THE IMAGE AND CHANGE THIS BACK */
-  width: 200px;
-  height: 270px;
-  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.team-members p {
-  padding-top: 10px;
-  font-size: 16px;
-  font-weight: 300;
+.caption {
+  display: block;
+  font-size: 1.5vw;
+  margin-bottom: -0.5vw;
+}
+
+#sub {
+  color: #062745;
+  font-size: 1.2vw;
+  font-weight: 500;
+  margin-bottom: -0.75vw;
+}
+
+#joys {
+  color: #062745;
+  font-size: 1vw;
+  white-space: nowrap;
 }
 
 .copyright {
-  text-align: center;
-  font-size: 12px;
-  padding-top: 10px;
+  color: #062745;
+  text-align: left;
+  font-size: 0.75vw;
+  line-height: 1.5;
+  font-weight: 500;
+  margin-left: 5vw;
+  padding-bottom: 1.5vw;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: #99CFFF;
+  padding-top: 2vw;
+}
+
+.capstone-container {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5vw;
+  padding-bottom: 1.5vw;
+}
+
+.capstone-logo {
+  padding-bottom: 1vw;
+  width: 15vw;
+  height: auto;
 }
