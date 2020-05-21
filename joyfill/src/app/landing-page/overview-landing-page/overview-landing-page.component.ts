@@ -29,20 +29,11 @@ export class OverviewLandingPageComponent implements OnInit {
     return await this.authService.isAuthenticated();
   }
 
-  openLogin(): void {
-    const dialogConfig = new MatDialogConfig();
-    // dialogConfig.closeOnNavigation = true; THIS DIDNT WORK FOR SOME REASON
-    dialogConfig.height = '90%';
-    dialogConfig.width = '40%';
-
-    const loginRef = this.dialog.open(LoginDialogComponent, dialogConfig);
+  navigateToLoginPage() {
+    this.router.navigate(['login']);
   }
 
-  openSignUp() {
-    const signUpRef = this.dialog.open(SignUpDialogComponent, {
-      width: '40%',
-      height: '90%',
-    });
-  }
-
+  navigateToSignupPage() {
+    this.router.navigate(['signup']);
+  } 
 }
