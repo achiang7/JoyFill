@@ -14,14 +14,7 @@ import { User } from 'src/app/shared/user.class';
 export class UserProfilePage implements OnInit {
 
   ownsProfile: boolean;
-  profileUser: User;
-
-  welcomeHeadline: string;
-  introMsg: string;
-
-  displayedJoy;
-
-  showingJoy = false;
+  userProfile: User;
 
   constructor(
     private userService: UserService,
@@ -35,27 +28,12 @@ export class UserProfilePage implements OnInit {
       (params: ParamMap) => {
         this.ownsProfile = params.get('uid') === null;
         if (this.ownsProfile) {
-          this.profileUser = this.userService.currentUser;
+          this.userProfile = this.userService.currentUser;
         } else {
-          this.profileUser = this.firestoreService.makeUserCopy(params.get('uid'));
+          this.userProfile = this.firestoreService.makeUserCopy(params.get('uid'));
         }
-
-        if (this.ownsProfile) {
-          this.welcomeHeadline = 'Hi ' + this.profileUser.firstName;
-          this.introMsg = 'Welcome back to your Joyspace!';
-        } else {
-          this.welcomeHeadline = 'Welcome to ' + this.profileUser.firstName + "/'s Joyspace!";
-          this.introMsg = '';
-        }
-
-        this.displayedJoy = this.profileUser.joys[0];
       }
     );
-  }
-
-  goToJoyMap() {
-    console.log('going ok going');
-    this.router.navigate(['profile/joymap']);
   }
 
 }

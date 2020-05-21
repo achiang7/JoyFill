@@ -1,7 +1,62 @@
 
-<app-topmenu></app-topmenu>
+<ion-content [fullscreen]="true">
 
-<ion-content>
+  <app-topmenu></app-topmenu>
+  <div class="banner">
+    <button type="button">
+      <img class="edit-icon" src="../../../assets/pencil-edit-button.svg">
+      Edit Joys
+    </button>
+  </div>
+  
+  <div class="avatar"></div>
+  <img class="profile-photo" alt="Profile Photo" src="../../../assets/outline.png">
+  
+  <h1 class="user-name">{{userProfile.firstName}} {{userProfile.lastName}}</h1>
+<!-- 
+  <mat-grid-list cols="5" rowHeight="350px">
+    <mat-grid-tile colspan="1" *ngFor="let joy of userProfile.joys" (click)="openDialog()">
+      <div class="tilefix">
+        <mat-card *ngIf="joy.status > 77" id="positive">
+          <mat-card-header>
+            <img id="icon" alt="Joy Icon" [src]="joy.icon">
+            <div id="card-banner"></div>
+            <div class=card-info>
+              <p class="card-title">{{joy.name}}</p>
+              <p class="card-category">{{joy.category}}</p>
+            </div>
+          </mat-card-header>
+        </mat-card>
+
+        <mat-card *ngIf="joy.status > 33 && joy.status < 77" id="neutral">
+          <mat-card-header>
+            <img id="icon" alt="Joy Icon" src="../../assets/icon/basketball.png">
+            <img id="card-banner" alt="Memories Preview" [src]="joy.memories">
+          </mat-card-header>
+          <mat-card-content>
+            <p class="card-title">{{joy.name}}</p>
+            <p class="card-category">{{joy.category}}</p>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card *ngIf="joy.status < 33" id="negative">
+          <mat-card-header>
+            <img id="icon" alt="Joy Icon" src="../../assets/icon/basketball.png">
+            <img id="card-banner" alt="Memories Preview" [src]="joy.memories">
+          </mat-card-header>
+          <mat-card-content>
+            <p class="card-title">{{joy.name}}</p>
+            <p class="card-category">{{joy.category}}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list> -->
+  
+</ion-content>
+
+
+<!-- 
   <ion-grid>
     <ion-row>
       
@@ -40,13 +95,9 @@
       </ion-col>
 
       <ion-col class="planner" style="margin-left: 10%;">
-        <!-- <app-planner *ngIf="this.ownsProfile"></app-planner>
-        <app-joycard *ngIf="!this.ownsProfile"></app-joycard> -->
         <app-joycard [joy]="displayedJoy"></app-joycard>
 
       </ion-col>
 
     </ion-row>
-  </ion-grid>
-</ion-content>
-
+  </ion-grid> -->

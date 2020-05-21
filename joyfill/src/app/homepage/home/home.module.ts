@@ -12,7 +12,9 @@ import { HomePage } from './home.page';
 import { GraphComponent } from './visuals/graph/graph.component';
 import { SHARED_VISUALS } from './visuals/shared';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { SharedModule } from '../../shared/module/shared.module';
+import { TopmenuComponent } from 'src/app/shared/components/topmenu/topmenu.component';
+import { SharedModule } from 'src/app/shared/module/shared.module';
+//import { SharedModule } from '../../shared/module/shared.module';
 
 @NgModule({
   imports: [
@@ -25,6 +27,7 @@ import { SharedModule } from '../../shared/module/shared.module';
   declarations: [
     HomePage,
     GraphComponent,
+    //TopmenuComponent,
     NotificationsComponent,
     ...SHARED_VISUALS,
     ...D3_DIRECTIVES

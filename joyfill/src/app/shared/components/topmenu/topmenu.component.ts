@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/landing-page/services/authentication';
 
 @Component({
   selector: 'app-topmenu',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 export class TopmenuComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router, 
+    private authenticationService: AuthenticationService
   ) { }
 
   ngOnInit() {}
@@ -23,11 +25,11 @@ export class TopmenuComponent implements OnInit {
   }
 
   navigateToFriends() {
-    this.router.navigate(['/home']);
+
   }
 
   logout() {
-    console.log('doing logout');
+    this.authenticationService.doLogout();
     this.router.navigate(['/overview']);
   }
 

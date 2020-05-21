@@ -12,11 +12,22 @@ import { JoycardComponent } from './joycard/joycard.component';
 import { PlannerComponent } from './planner/planner.component';
 import { SharedModule } from '../shared/module/shared.module';
 
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+
+    MatExpansionModule,
+    MatGridListModule,
+    MatCardModule,
+    MatDialogModule,
+
     SharedModule,
     UserProfilePageRoutingModule
   ],

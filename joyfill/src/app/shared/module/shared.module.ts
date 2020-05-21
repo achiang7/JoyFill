@@ -1,19 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TopmenuComponent } from '../topmenu/topmenu.component';
-
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-
+import { TopmenuComponent } from '../components/topmenu/topmenu.component';
 
 @NgModule({
-    declarations: [
-        TopmenuComponent, 
-        IonicModule
-    ],
-    imports: [
-        CommonModule,
-    ],
-    exports: [],
-    providers: [],
+ imports:      [ CommonModule, IonicModule ],
+ declarations: [ TopmenuComponent ],
+ exports:      [ TopmenuComponent, CommonModule, FormsModule ]
 })
 export class SharedModule { }
