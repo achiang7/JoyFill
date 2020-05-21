@@ -10,12 +10,14 @@ import { UserProfilePage } from './user-profile/user-profile.page';
 import { UserJoymapPage } from './user-joymap/user-joymap.page';
 import { JoycardComponent } from './joycard/joycard.component';
 import { PlannerComponent } from './planner/planner.component';
+import { SharedModule } from '../shared/module/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     UserProfilePageRoutingModule
   ],
   declarations: [

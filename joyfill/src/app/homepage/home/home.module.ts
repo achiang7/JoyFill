@@ -12,19 +12,19 @@ import { HomePage } from './home.page';
 import { GraphComponent } from './visuals/graph/graph.component';
 import { SHARED_VISUALS } from './visuals/shared';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { MenuComponent } from '../../shared/menu/menu.component';
+import { SharedModule } from '../../shared/module/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     HomePageRoutingModule
   ],
   declarations: [
     HomePage,
     GraphComponent,
-    MenuComponent,
     NotificationsComponent,
     ...SHARED_VISUALS,
     ...D3_DIRECTIVES
