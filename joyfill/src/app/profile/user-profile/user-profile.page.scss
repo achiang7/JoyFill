@@ -106,6 +106,7 @@ app-add-joy {
 
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     background-color: #f8f8ff;
     border-radius: 5px;
@@ -113,7 +114,6 @@ app-add-joy {
 
 ion-card-content{
     font-size: 25px;
-    white-space: nowrap;
     bottom: 9px;
 }
 
