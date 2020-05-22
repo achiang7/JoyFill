@@ -29,6 +29,7 @@ export class UserProfilePage implements OnInit {
         this.ownsProfile = params.get('uid') === null;
         if (this.ownsProfile) {
           this.userProfile = this.userService.currentUser;
+          console.log(this.userProfile);
         } else {
           this.userProfile = this.firestoreService.makeUserCopy(params.get('uid'));
         }

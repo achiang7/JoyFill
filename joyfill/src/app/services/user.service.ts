@@ -28,12 +28,16 @@ export class UserService {
             this.user = this.userDoc.valueChanges();
 
             this.user.subscribe(data => {
-                const keys = Object.keys(data);
-                for (const key of keys) {
-                    this.currentUser[key] = data[key];
+                if (data === null || data === undefined) {
+                    resolve();
+                } else {
+                    const keys = Object.keys(data);
+                    for (const key of keys) {
+                        this.currentUser[key] = data[key];
+                    }
+                    console.log(this.currentUser);
+                    resolve();
                 }
-                console.log(this.currentUser);
-                resolve();
             });
         });
     }
