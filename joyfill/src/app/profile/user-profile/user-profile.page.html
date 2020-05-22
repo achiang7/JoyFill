@@ -2,17 +2,41 @@
 <ion-content [fullscreen]="true">
 
   <app-topmenu></app-topmenu>
-  <div class="banner">
-    <button type="button">
-      <img class="edit-icon" src="../../../assets/pencil-edit-button.svg">
-      Edit Joys
-    </button>
+
+  <div class="top-portion">
+    <div class="banner">
+      <button type="button">
+        <img class="edit-icon" src="../../../assets/pencil-edit-button.svg">
+        Edit Joys
+      </button>
+    </div>
+    
+    <div class="avatar"></div>
+    <img class="profile-photo" alt="Profile Photo" src="../../../assets/outline.png">
+    
+    <h1 class="user-name">{{userProfile.firstName}} {{userProfile.lastName}}</h1>
   </div>
-  
-  <div class="avatar"></div>
-  <img class="profile-photo" alt="Profile Photo" src="../../../assets/outline.png">
-  
-  <h1 class="user-name">{{userProfile.firstName}} {{userProfile.lastName}}</h1>
+
+  <div class="content-portion">
+    <div id="joy-buttons">
+      <ion-card class="joy-button" button="true" (click)="expandJoy(joy)" *ngFor="let joy of userProfile.joys">
+          <ion-card-content>
+            <ion-row>
+              <img class="icon" [src]="joy.joyIcon" />
+              <span class="tag-text">{{ joy.name }}</span>
+            </ion-row>
+          </ion-card-content>
+      </ion-card>
+    </div>
+
+    <br>
+
+    <div id="content-details">
+      
+    </div>
+  </div>
+
+
 <!-- 
   <mat-grid-list cols="5" rowHeight="350px">
     <mat-grid-tile colspan="1" *ngFor="let joy of userProfile.joys" (click)="openDialog()">

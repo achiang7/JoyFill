@@ -37,4 +37,8 @@ export class UserProfilePage implements OnInit {
     );
   }
 
+  expandJoy(joy) {
+    console.log(joy);
+  }
+
 }

@@ -15,15 +15,14 @@ import { AuthenticationService } from 'src/app/landing-page/services/authenticat
 export class HomePage implements OnInit {
   nodes: Node[] = [];
   links: Link[] = [];
-  
+
   constructor(
-    private userService: UserService,
+    public userService: UserService,
     private firestoreService: FirestoreService,
     private authService: AuthenticationService,
   ) {
     let networkNodes = data.nodes;
-    //var networkLinks = data.links;
-    
+
     /** constructing the nodes array */
     for (let i = 0; i <= networkNodes.length - 1; i++) {
       this.nodes.push(new Node(networkNodes[i]));
@@ -41,7 +40,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     if (this.userService.currentUser.firstName === undefined) {
-      console.log(this.userService.currentUser);
+      console.log('consoling from home', this.userService.currentUser);
       let uid = localStorage.getItem('uid');
       if (uid === null){
         console.log('UID is not stored in localstorage -- this should not be happening');
