@@ -1,6 +1,9 @@
 .logo-image {
     padding-right: 60px;
     width: 200px;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 ion-tab-bar, ion-tab-button{
