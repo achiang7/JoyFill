@@ -6,16 +6,16 @@
   <div class="grid-style">
     <ion-grid *ngIf="searchTerm !== ''">
       <ion-row style="text-align: center">
-        <div button="true" (click)="selectJoy(joy)" *ngFor="let joy of joys">
-          <ion-card class="card-style">
-            <ion-card-content>
-              <ion-row>
-                <img class="icon" [src]="joy.icon" />
-                <p class="tag-text">{{ joy.name }}</p>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </div>
+
+        <ion-card button class="card-style" (click)="selectJoy(joy)" *ngFor="let joy of joys">
+          <ion-card-content>
+            <ion-row>
+              <img class="icon" [src]="joy.icon" />
+              <p class="tag-text">{{ joy.name }}</p>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+
       </ion-row>
     </ion-grid>
   </div>
@@ -46,8 +46,11 @@
     <ion-grid>
       <ion-row style="text-align: center">
         <div *ngFor="let joy of selectedJoys">
-          <ion-card class="card-style">
-            <ion-card-content>{{ joy.name }}</ion-card-content>
+          <ion-card class="tag-style">
+            <ion-row>
+              <img class="tag-icon" [src]="joy.icon" />
+              <p class="selected-text">{{ joy.name }}</p>
+            </ion-row>
           </ion-card>
         </div>
       </ion-row>
