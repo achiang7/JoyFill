@@ -24,6 +24,7 @@ import { OverviewLandingPageComponent } from './landing-page/overview-landing-pa
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule, MatCard } from '@angular/material/card';
 
 import { LoginDialogComponent } from './landing-page/login-dialog/login-dialog.component';
@@ -81,6 +82,8 @@ import { FirestoreService } from './firebase-services/firestore.service';
     MatSnackBarModule,
     MatGridListModule,
     MatCardModule,
+    MatDividerModule,
+
     FormsModule,
     ReactiveFormsModule,
 

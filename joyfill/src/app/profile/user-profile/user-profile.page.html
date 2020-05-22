@@ -5,19 +5,27 @@
 
   <div class="top-portion">
     <div class="banner">
-      <button type="button">
+      <ion-card id="edit-button" [class.hidden]="!ownsProfile" button=true (click)="editJoys()">
         <img class="edit-icon" src="../../../assets/pencil-edit-button.svg">
         Edit Joys
-      </button>
+      </ion-card>
+      <ion-card id="send-friend-request" [class.hidden]="ownsProfile" button=true (click)="sendFriendRequest()">
+        <img class="edit-icon" src="../../../assets/pencil-edit-button.svg">
+        Send Friend Request
+      </ion-card>
     </div>
     
     <div class="avatar"></div>
     <img class="profile-photo" alt="Profile Photo" src="../../../assets/outline.png">
     
     <h1 class="user-name">{{userProfile.firstName}} {{userProfile.lastName}}</h1>
-  </div>
 
-  <div class="content-portion">
+    <br>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+    <br>
+
     <div id="joy-buttons">
       <ion-card class="joy-button" button="true" (click)="expandJoy(joy)" *ngFor="let joy of userProfile.joys">
           <ion-card-content>
@@ -28,7 +36,12 @@
           </ion-card-content>
       </ion-card>
     </div>
+  </div>
 
+  <br>
+
+  <div class="content-portion">
+    
     <br>
 
     <div id="content-details">

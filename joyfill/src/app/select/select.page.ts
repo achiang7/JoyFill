@@ -3,6 +3,7 @@ import { UserService } from '../services/user.service';
 import { FirestoreService } from '../firebase-services/firestore.service';
 import { NavController } from '@ionic/angular';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-select',
@@ -21,7 +22,8 @@ export class SelectPage implements OnInit {
     public navCtrl: NavController,
     private userService: UserService,
     private firestoreService: FirestoreService,
-    private afs: AngularFirestore
+    private afs: AngularFirestore,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -44,7 +46,7 @@ export class SelectPage implements OnInit {
       return;
     }
 
-    this.joys= this.joys.filter(searchJoys => {
+    this.joys = this.joys.filter(searchJoys => {
       if(searchJoys.name && this.searchTerm || searchJoys.category && this.searchTerm) {
         if(searchJoys.name.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1 || 
            searchJoys.category.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1 ) {
@@ -59,6 +61,9 @@ export class SelectPage implements OnInit {
     console.log('Joy', joy);
     if (!this.selectedJoys.has(joy)) {
       this.selectedJoys.add(joy);
+      this.openSnackBar('Updated joys', 'YeeHaw!');
+    } else {
+      this.openSnackBar('You already have this joy', 'Okay!');
     }
     console.log(this.selectedJoys);
   }
@@ -76,5 +81,11 @@ export class SelectPage implements OnInit {
     this.firestoreService.setUserProfile(this.userService.currentUser);
     this.navCtrl.navigateForward('/home');
     console.log(this.userService.currentUser);
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 }

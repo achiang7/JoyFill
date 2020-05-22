@@ -41,4 +41,12 @@ export class UserProfilePage implements OnInit {
     console.log(joy);
   }
 
+  editJoys() {
+    console.log('get ready to edit the joys!');
+  }
+
+  sendFriendRequest() {
+    console.log('Sending friend request');
+  }
+
 }
