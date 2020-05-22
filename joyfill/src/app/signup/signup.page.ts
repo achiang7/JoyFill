@@ -62,7 +62,7 @@ export class SignupPage implements OnInit {
         this.successMessage = "Your account has been created. Please log in.";
         this.authService.updateUserProfile({email: value.email});
         this.userService.currentUser.email = value.email;
-        this.navCtrl.navigateForward('/complete-profile');
+        this.navCtrl.navigateForward('/complete');
       }, err => {
         console.log(err);
         this.errorMessage = err.message;
