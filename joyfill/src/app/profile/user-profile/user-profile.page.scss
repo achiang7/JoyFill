@@ -111,26 +111,30 @@ app-add-joy {
     border-radius: 5px;
 }
 
-ion-card-content { 
-    padding-top: 7px;
+ion-card-content{
+    font-size: 25px;
+    white-space: nowrap;
+    bottom: 9px;
 }
 
 .joy-button {
-    width: auto;
     height: 40px;
-    border-radius: 50px;
+    border-radius: 50px; 
+    padding-left: 0.2vw; 
+    padding-right: 0.2vw;
 }
 
 .icon {
-    width: 2.5vw;
-    height: auto;
+    width: 2vw;
+    height: 2vw;
+    margin-top: 0.1vw;
     margin-right: 0.5vw;
 }
 
 .tag-text {
-    padding-top: 3px;
+    margin-top: 0.4vw;
+    font-size: 1vw;
 }
-
 
 /**************
         CONTENT DETAILS

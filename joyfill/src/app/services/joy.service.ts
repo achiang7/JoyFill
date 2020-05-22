@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument }
-from '@angular/fire/firestore';
-import { Observable } from 'rxjs/Observable';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { Joy } from '../models/Joy';
 

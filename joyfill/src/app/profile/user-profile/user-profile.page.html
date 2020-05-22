@@ -22,7 +22,7 @@
       <ion-card class="joy-button" button="true" (click)="expandJoy(joy)" *ngFor="let joy of userProfile.joys">
           <ion-card-content>
             <ion-row>
-              <img class="icon" [src]="joy.joyIcon" />
+              <img class="icon" [src]="joy.icon" />
               <span class="tag-text">{{ joy.name }}</span>
             </ion-row>
           </ion-card-content>
