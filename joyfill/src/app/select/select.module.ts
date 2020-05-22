@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SelectPageRoutingModule } from './select-routing.module';
 
 import { SelectPage } from './select.page';
+import { AddJoyComponent } from '../add-joy/add-joy.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { SelectPage } from './select.page';
     SelectPageRoutingModule
   ],
   declarations: [
-    SelectPage]
+    SelectPage,
+    AddJoyComponent]
 })
 export class SelectPageModule {}
